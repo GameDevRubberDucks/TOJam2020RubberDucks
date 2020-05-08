@@ -74,10 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CallerLog_Script.cs" />
+    <Compile Include="Assets\CallerLog_UIManager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Group.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_HelperStructures.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Individual.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Manager.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Key_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room_HelperStructures.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room_Manager.cs" />
