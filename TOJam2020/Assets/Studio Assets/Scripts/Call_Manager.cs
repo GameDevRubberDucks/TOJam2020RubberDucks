@@ -13,7 +13,7 @@ public class Call_Manager : MonoBehaviour
 
     //--- Private Variables ---//
     private Room_Manager m_roomManager;
-    private CallerLog_Script m_callLogUI;
+    private CallerLog_UIManager m_callLogUI;
     private List<Call_Group> m_callList;
     private float m_timeSinceLastCall;
 
@@ -24,7 +24,7 @@ public class Call_Manager : MonoBehaviour
     {
         // Init the private variables 
         m_roomManager = GameObject.FindObjectOfType<Room_Manager>();
-        m_callLogUI = GameObject.FindObjectOfType<CallerLog_Script>();
+        m_callLogUI = GameObject.FindObjectOfType<CallerLog_UIManager>();
         m_callList = new List<Call_Group>();
         m_timeSinceLastCall = 0.0f;
     }
