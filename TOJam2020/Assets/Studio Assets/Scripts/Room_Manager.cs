@@ -5,7 +5,6 @@ public class Room_Manager : MonoBehaviour
 {
     //--- Public Variables ---//
     public List<Room> m_rooms;
-    public int m_numActiveRooms;
 
     
 
@@ -25,5 +24,34 @@ public class Room_Manager : MonoBehaviour
 
         // Return if the transfer was succesful on both ends
         return (removeSuccess && addSuccess);
+    }
+
+
+
+    //--- Getters ---//
+    public int HighestRoomCapacity
+    {
+        get
+        {
+            // Start with a 0 capacity
+            int maxCapacity = 0;
+
+            // Loop through the chat rooms and determine which has the highest capacity
+            for (var roomName = Room_Name.Chat_1; roomName <= Room_Name.Chat_5; roomName++)
+            {
+                // Grab the room reference
+                Room roomRef = m_rooms[(int)roomName];
+
+                // If the selected room is inactive, just move on to the next one
+                if (!roomRef.IsActive)
+                    continue;
+
+                // Otherwise, compare against the current max capacity and update it if need be
+                maxCapacity = (roomRef.MaxCapacity > maxCapacity) ? roomRef.MaxCapacity : maxCapacity;
+            }
+
+            // Return the highest capacity
+            return maxCapacity;
+        }
     }
 }
