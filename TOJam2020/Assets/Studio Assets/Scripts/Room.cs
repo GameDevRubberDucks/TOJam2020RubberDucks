@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 
-public class Room : MonoBehaviour
+[Serializable]
+public class Room
 {
     //--- Private Variables ---//
     private List<Call_Participant> m_callersInRoom;
-    private Room_Name m_roomName;
-    private int m_maxCapacity;
+    [SerializeField] private Room_Name m_roomName;
+    [SerializeField] private int m_maxCapacity;
     private int m_currentCapacity;
-    private bool m_isActive;
+    [SerializeField] private bool m_isActive;
 
 
 

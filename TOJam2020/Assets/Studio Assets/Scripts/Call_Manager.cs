@@ -13,7 +13,7 @@ public class Call_Manager : MonoBehaviour
 
     //--- Private Variables ---//
     private Room_Manager m_roomManager;
-    private CallerLog_Script m_callLog;
+    private CallerLog_Script m_callLogUI;
     private List<Call_Group> m_callList;
     private float m_timeSinceLastCall;
 
@@ -24,19 +24,23 @@ public class Call_Manager : MonoBehaviour
     {
         // Init the private variables 
         m_roomManager = GameObject.FindObjectOfType<Room_Manager>();
-        m_callLog = GameObject.FindObjectOfType<CallerLog_Script>();
+        m_callLogUI = GameObject.FindObjectOfType<CallerLog_Script>();
         m_callList = new List<Call_Group>();
         m_timeSinceLastCall = 0.0f;
     }
 
     private void Update()
     {
-        // Count up since the last call
-        m_timeSinceLastCall += Time.deltaTime;
+        // Only try to generate new calls if there is still space to do so
+        if (m_callList.Count < m_MAX_NUM_CALLS)
+        {
+            // Count up since the last call
+            m_timeSinceLastCall += Time.deltaTime;
 
-        // If enough time has passed, generate a new call
-        if (m_timeSinceLastCall >= m_timeBetweenCalls)
-            GenerateCall();
+            // If enough time has passed, generate a new call
+            if (m_timeSinceLastCall >= m_timeBetweenCalls)
+                GenerateCall();
+        }
     }
 
 
@@ -45,7 +49,7 @@ public class Call_Manager : MonoBehaviour
     public void GenerateCall()
     {
         // Create a new call group by randomly generating the necessary properties
-        // The call capacity can be anywhere between 2 people and the highest room count (inclusive). The +1 is because the 
+        // The call capacity can be anywhere between 2 people and the highest room count (inclusive). The +1 is because the Random.Range() function is exclusive at the upper bound
         // The wait time is randomly selected from a list set in the inspector
         // The call duration is randomly selected from a list set in the inspector
         int newCallCapacity = Random.Range(2, m_roomManager.HighestRoomCapacity + 1);
@@ -60,7 +64,7 @@ public class Call_Manager : MonoBehaviour
         m_callList.Add(newCall);
 
         // Generate a new UI element for the call
-        m_callLog.AddCallGroupUI(newCall);
+        m_callLogUI.AddCallGroupUI(newCall);
 
         // Reset the timer
         m_timeSinceLastCall = 0.0f;
@@ -84,7 +88,7 @@ public class Call_Manager : MonoBehaviour
         }
 
         // Remove the UI element from the call backlog
-        m_callLog.RemoveCallGroupUI(_callObj);
+        m_callLogUI.RemoveCallGroupUI(_callObj);
 
         // Either way, unhook the event and remove the call from the list
         _callObj.m_OnCallCompleted.RemoveAllListeners();
