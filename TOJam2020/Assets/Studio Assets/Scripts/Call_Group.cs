@@ -94,4 +94,32 @@ public class Call_Group
         else
             m_callState = Call_State.Waiting;
     }
+
+
+    //--- Getter Functions ---//
+    public int GetNumParticipants()
+    {
+        return m_numParticipants;
+    }
+
+    public float GetWaitTimeMax()
+    {
+        return m_waitTimeMax;
+    }
+
+    public float GetWaitTimeRemaining()
+    {
+        return m_waitTimeRemaining;
+    }
+
+    public float GetCallTimeMax()
+    {
+        return m_callTimeMax;
+    }
+
+    public float GetCallTimeRemaining()
+    {
+        return m_callTimeRemaining;
+    }
+
 }
