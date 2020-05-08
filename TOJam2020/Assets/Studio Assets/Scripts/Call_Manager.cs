@@ -41,6 +41,10 @@ public class Call_Manager : MonoBehaviour
             if (m_timeSinceLastCall >= m_timeBetweenCalls)
                 GenerateCall();
         }
+
+        // Update all of the calls
+        foreach (var call in m_callList)
+            call.UpdateCall();
     }
 
 
@@ -56,6 +60,9 @@ public class Call_Manager : MonoBehaviour
         float newCallWaitTime = m_possibleWaitTimes[Random.Range(0, m_possibleWaitTimes.Length)];
         float newCallLength = m_possibleCallLengths[Random.Range(0, m_possibleCallLengths.Length)];
         Call_Group newCall = new Call_Group(newCallCapacity, newCallWaitTime, newCallLength);
+
+        // Place all of the new call individuals into the unassigned room
+        m_roomManager.AddUnassignedCallers(newCall.CallParticipants);
 
         // Hook into the call completion event so we can handle it finishing
         newCall.m_OnCallCompleted.AddListener(this.OnCallCompleted);

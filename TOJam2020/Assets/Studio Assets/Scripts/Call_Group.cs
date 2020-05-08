@@ -9,7 +9,7 @@ public class Call_Group
 
 
     //--- Private Variables ---//
-    private List<Call_Participant> m_callParticipants;
+    private List<Call_Individual> m_callParticipants;
     private Call_State m_callState;
     private int m_numParticipants;
     private float m_waitTimeMax;
@@ -22,8 +22,11 @@ public class Call_Group
     //--- Constructors ---//
     public Call_Group(int _numParticipants, float _waitTimeMax, float _callTimeMax)
     {
+        // Init the event
+        m_OnCallCompleted = new Call_CompletionEvent();
+
         // Init the private data
-        m_callParticipants = new List<Call_Participant>();
+        m_callParticipants = new List<Call_Individual>();
         m_callState = Call_State.Waiting;
         m_numParticipants = _numParticipants;
         m_waitTimeMax = _waitTimeMax;
@@ -33,7 +36,7 @@ public class Call_Group
 
         // Create the call participants and keep track of them
         for (int i = 0; i < m_numParticipants; i++)
-            m_callParticipants.Add(new Call_Participant());
+            m_callParticipants.Add(new Call_Individual());
     }
 
 
@@ -50,9 +53,6 @@ public class Call_Group
             // Lower the patience meter
             m_waitTimeRemaining -= Time.deltaTime;
 
-            // TODO: Update the UI representations of this wait time
-            // ...
-
             // The callers waited too long and ran out of patience
             if (m_waitTimeRemaining <= 0.0f)
                 m_OnCallCompleted.Invoke(this, Call_State.Waited_Too_Long);
@@ -61,9 +61,6 @@ public class Call_Group
         {
             // Lower the call time
             m_callTimeRemaining -= Time.deltaTime;
-
-            // TODO: Update the UI representations of the call time
-            // ...
 
             // The callers completed their call successfully
             if (m_callTimeRemaining <= 0.0f)
@@ -93,5 +90,13 @@ public class Call_Group
             m_callState = Call_State.Active;
         else
             m_callState = Call_State.Waiting;
+    }
+
+
+
+    //--- Setters and Getters ---//
+    public List<Call_Individual> CallParticipants
+    {
+        get => m_callParticipants;
     }
 }

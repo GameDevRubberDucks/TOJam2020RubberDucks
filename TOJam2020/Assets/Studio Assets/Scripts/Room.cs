@@ -6,42 +6,34 @@ using System.Collections.Generic;
 public class Room
 {
     //--- Private Variables ---//
-    private List<Call_Participant> m_callersInRoom;
+    private List<Call_Individual> m_callersInRoom;
     [SerializeField] private Room_Name m_roomName;
     [SerializeField] private int m_maxCapacity;
-    private int m_currentCapacity;
     [SerializeField] private bool m_isActive;
 
 
 
-    //--- Constructors ---//
-    public Room(Room_Name _roomName, int _maxCapacity)
+    //--- Methods ---//
+    public void ClearCallerList()
     {
-        // Init the private variables
-        m_callersInRoom = new List<Call_Participant>();
-        m_roomName = _roomName;
-        m_maxCapacity = _maxCapacity;
-        m_currentCapacity = 0;
-        m_isActive = false;
+        // Reset the callers currently in the room
+        m_callersInRoom = new List<Call_Individual>();
     }
 
-
-
-    //--- Methods ---//
-    public bool CheckForCapacity(List<Call_Participant> _newCallers)
+    public bool CheckForAdd(List<Call_Individual> _newCallers)
     {
         // If this room isn't active, there is no capacity
         if (!m_isActive)
             return false;
 
         // If there isn't enough space to add the new callers, back out
-        return (_newCallers.Count <= (m_maxCapacity - m_currentCapacity));
+        return (_newCallers.Count <= (m_maxCapacity - m_callersInRoom.Count));
     }
 
-    public bool AddParticipants(List<Call_Participant> _newCallers)
+    public bool AddCallers(List<Call_Individual> _newCallers)
     {
         // Perform a check to ensure this will work
-        if (!CheckForCapacity(_newCallers))
+        if (!CheckForAdd(_newCallers))
             return false;
 
         // Add the participants to the list
@@ -56,7 +48,7 @@ public class Room
         return true;
     }
 
-    public bool CheckForRemoval(List<Call_Participant> _callersToRemove)
+    public bool CheckForRemoval(List<Call_Individual> _callersToRemove)
     {
         // Ensure all of the callers in the list are actually in this room
         foreach(var caller in _callersToRemove)
@@ -70,7 +62,7 @@ public class Room
         return true;
     }   
 
-    public bool RemoveParticipants(List<Call_Participant> _callersToRemove)
+    public bool RemoveCallers(List<Call_Individual> _callersToRemove)
     {
         // Perform a check to ensure this will work
         if (!CheckForRemoval(_callersToRemove))
@@ -93,6 +85,12 @@ public class Room
 
 
     //--- Getters and Setters ---//
+    public Room_Name RoomName
+    {
+        get => m_roomName;
+        set => m_roomName = value;
+    }
+
     public int MaxCapacity
     {
         get => m_maxCapacity;

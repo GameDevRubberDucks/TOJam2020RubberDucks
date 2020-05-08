@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Call_Participant
+public class Call_Individual
 {
     //--- Private Variables ---//
     private KeyCode m_boundKeyCode;
@@ -9,7 +9,7 @@ public class Call_Participant
 
 
     //--- Constructors ---//
-    public Call_Participant()
+    public Call_Individual()
     {
         // Init the private variables
         m_boundKeyCode = KeyCode.None;
