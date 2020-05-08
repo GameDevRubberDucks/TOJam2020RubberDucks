@@ -87,4 +87,19 @@ public class Room : MonoBehaviour
         // Return true to indicate the removal worked
         return true;
     }
+
+
+
+    //--- Getters and Setters ---//
+    public int MaxCapacity
+    {
+        get => m_maxCapacity;
+        set => m_maxCapacity = value;
+    }
+
+    public bool IsActive
+    {
+        get => m_isActive;
+        set => m_isActive = value;
+    }
 }
