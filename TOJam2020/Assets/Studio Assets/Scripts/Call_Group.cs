@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 using System.Collections.Generic;
 
 public class Call_Group
@@ -42,7 +41,7 @@ public class Call_Group
     //--- Methods ---//
     public void UpdateCall()
     {
-        // Update the current state depending on if individual callers have moved around
+        // Update the current state to see if all the participants are in a chatroom together
         UpdateCallState();
 
         // Depending on the state, handle the timer update
@@ -74,6 +73,25 @@ public class Call_Group
 
     public void UpdateCallState()
     {
-        // TODO: Check in with the individual callers and see if they are in the same room
+        // Grab the first caller's room so we can see if everyone else is there too
+        Room_Name firstCallerRoom = m_callParticipants[0].CurrentRoom;
+
+        // Check in with the individual callers and see if they are in the same room
+        foreach(var caller in m_callParticipants)
+        {
+            // If one of the participants is not in the same room, this call is in a waiting state by default
+            if (firstCallerRoom != caller.CurrentRoom)
+            {
+                m_callState = Call_State.Waiting;
+                return;
+            }
+        }
+
+        // If all of the callers are in the same room, we still need to determine if they are actually in a chat room
+        // If they are not in a chat room but they are all together, they are still waiting
+        if (firstCallerRoom >= Room_Name.Chat_1 && firstCallerRoom <= Room_Name.Chat_5)
+            m_callState = Call_State.Active;
+        else
+            m_callState = Call_State.Waiting;
     }
 }
