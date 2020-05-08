@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class Call_Group
 {
@@ -9,6 +10,7 @@ public class Call_Group
 
 
     //--- Private Variables ---//
+    private List<Call_Participant> m_callParticipants;
     private Call_State m_callState;
     private int m_numParticipants;
     private float m_waitTimeMax;
@@ -22,12 +24,17 @@ public class Call_Group
     public Call_Group(int _numParticipants, float _waitTimeMax, float _callTimeMax)
     {
         // Init the private data
+        m_callParticipants = new List<Call_Participant>();
         m_callState = Call_State.Waiting;
         m_numParticipants = _numParticipants;
         m_waitTimeMax = _waitTimeMax;
         m_waitTimeRemaining = m_waitTimeMax;
         m_callTimeMax = _callTimeMax;
         m_callTimeRemaining = m_callTimeMax;
+
+        // Create the call participants and keep track of them
+        for (int i = 0; i < m_numParticipants; i++)
+            m_callParticipants.Add(new Call_Participant());
     }
 
 

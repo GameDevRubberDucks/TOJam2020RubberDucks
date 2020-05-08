@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Studio Assets\Scripts\Call_Group.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_HelperStructures.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Call_Individual.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Manager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
