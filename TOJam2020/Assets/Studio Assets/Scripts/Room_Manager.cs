@@ -43,6 +43,12 @@ public class Room_Manager : MonoBehaviour
         return (removeSuccess && addSuccess);
     }
 
+    public bool TransferCallers(List<Call_Individual> _callers, Room_Name _endRoom)
+    {
+        // TODO: Write this function so that each caller can be coming from a DIFFERENT room
+        return false;
+    }
+
 
 
     //--- Getters ---//
