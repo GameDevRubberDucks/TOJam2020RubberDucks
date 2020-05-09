@@ -36,10 +36,11 @@ public class Key_Manager : MonoBehaviour
                 List<Call_Individual> selectedCallers = m_bindingManager.SelectedCallers;
 
                 // Try to transfer all of the selected callers to the given room
-                m_roomManager.TransferCallers(selectedCallers, GetRoomNameFromKeyCode(roomKeyCode));
-
-                // Clear the selection
-                m_bindingManager.DeselectAll();
+                if (m_roomManager.TransferCallers(selectedCallers, GetRoomNameFromKeyCode(roomKeyCode)))
+                {
+                    // Clear the selection
+                    m_bindingManager.DeselectAll();
+                }
             }
         }
 
@@ -75,10 +76,11 @@ public class Key_Manager : MonoBehaviour
             List<Call_Individual> selectedCallers = m_bindingManager.SelectedCallers;
 
             // Try to transfer all of the selected callers to the waiting room
-            m_roomManager.TransferCallers(selectedCallers, Room_Name.Waiting);
-
-            // Clear the selection
-            m_bindingManager.DeselectAll();
+            if(m_roomManager.TransferCallers(selectedCallers, Room_Name.Waiting))
+            {
+                // Clear the selection
+                m_bindingManager.DeselectAll();
+            }
         }
     }
 

@@ -8,6 +8,7 @@ public class Binding_Manager : MonoBehaviour
     private Dictionary<KeyCode, Call_Individual> m_keyBindings;
     private KeyCode m_keyToSwap;
     private bool m_isInSwapMode;
+    private Call_Group m_groupToBind;
 
 
 
@@ -19,6 +20,7 @@ public class Binding_Manager : MonoBehaviour
         m_keyBindings = new Dictionary<KeyCode, Call_Individual>();
         m_keyToSwap = KeyCode.None;
         m_isInSwapMode = false;
+        m_groupToBind = null;
 
         // Setup the dictionary to contain blank key bindings for all the letters of the alphabet
         for(var keyCode = KeyCode.A; keyCode <= KeyCode.Z; keyCode++)
@@ -42,7 +44,7 @@ public class Binding_Manager : MonoBehaviour
 
     public void HandleLetterKeyPressed(KeyCode _alphabetKey)
     {
-        // If in swap mode, we should prepare to switch the bindings. Otherwise, we should handle selections
+        // If in swap mode, we should prepare to switch the bindings
         if (m_isInSwapMode)
         {
             // If this is the first alphabet key pressed since entering swap mode, we should store it so we can prepare to swap next time
@@ -53,16 +55,51 @@ public class Binding_Manager : MonoBehaviour
             }
             else
             {
-                // Swap the values stored at the newly entered key value and the previously stored one
-                Call_Individual temp = m_keyBindings[m_keyToSwap];
-                m_keyBindings[m_keyToSwap] = m_keyBindings[_alphabetKey];
-                m_keyBindings[_alphabetKey] = temp;
+                // Hold the caller temporarily so we can perform a swap
+                Call_Individual tempCaller = m_keyBindings[m_keyToSwap];
+
+                // Swap the bindings
+                BindCallerToKey(m_keyToSwap, m_keyBindings[_alphabetKey]);
+                BindCallerToKey(_alphabetKey, tempCaller);
 
                 // Clear the held swap key
                 m_keyToSwap = KeyCode.None;
             }
         }
-        else
+        else if (m_groupToBind != null) // Otherwise, if the player selected a call group in the backlog, we should be binding those mappings
+        {
+            // We should check if the binding is currently open. If it isn't, we should back out
+            if (!CheckIfBindingOpen(_alphabetKey))
+                return;
+
+            // Grab the individual callers from the bound group
+            List<Call_Individual> callers = m_groupToBind.CallParticipants;
+
+            // Loop through and find the next one that needs a binding
+            for (int i = 0; i < callers.Count; i++)
+            {
+                // Grab the caller reference
+                var caller = callers[i];
+
+                // If the caller is already bound, we can move on to the next one
+                if (caller.BoundKeyCode != KeyCode.None)
+                    continue;
+
+                // Otherwise, we can go ahead and perform the binding
+                BindCallerToKey(_alphabetKey, caller);
+
+                // We should also mark the caller as selected to make it easier to move it around after
+                SelectCaller(caller);
+
+                // If this is the last caller, then the group is fully bound and we can unlink it
+                if (i == callers.Count - 1)
+                    m_groupToBind = null;
+
+                // Finally, we should break the loop to prevent binding the next caller to the same key
+                break;
+            }
+        }
+        else  // Otherwise, the player is selecting / deselecting a caller
         {
             // Grab the call participant reference associated with the keycode
             Call_Individual caller = m_keyBindings[_alphabetKey];
@@ -72,17 +109,49 @@ public class Binding_Manager : MonoBehaviour
             {
                 // If the caller is currently unselected, we should select them and vice versa
                 if (m_selectedCallers.Contains(caller))
-                    m_selectedCallers.Remove(caller);
+                    DeselectCaller(caller);
                 else
-                    m_selectedCallers.Add(caller);
+                    SelectCaller(caller);
             }
         }
     }
 
+    public void SelectCaller(Call_Individual _caller)
+    {
+        // Set the caller's selected value
+        _caller.IsSelected = true;
+
+        // Add the caller to the selected list
+        m_selectedCallers.Add(_caller);
+    }
+
+    public void DeselectCaller(Call_Individual _caller)
+    {
+        // Set the caller's selected value
+        _caller.IsSelected = false;
+
+        // Remove the caller from the selected list
+        m_selectedCallers.Remove(_caller);
+    }
+
     public void DeselectAll()
     {
-        // Clear the full list of selections
-        m_selectedCallers.Clear();
+        // Loop through and deselect all of the individual callers
+        foreach (var caller in m_selectedCallers)
+            DeselectCaller(caller);
+    }
+
+    public bool CheckIfBindingOpen(KeyCode _bindKey)
+    {
+        // Return true if the key binding is not associated with a caller
+        return (m_keyBindings[_bindKey] == null);
+    }
+
+    public void BindCallerToKey(KeyCode _bindKey, Call_Individual _caller)
+    {
+        // Bind the caller to the given key
+        m_keyBindings[_bindKey] = _caller;
+        _caller.BoundKeyCode = _bindKey;
     }
 
 
