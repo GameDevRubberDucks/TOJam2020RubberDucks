@@ -67,6 +67,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Call_Group.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_HelperStructures.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Individual.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Call_Individual_UI.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\CallerLog_Script.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\CallerLog_Scroll.cs" />
