@@ -168,6 +168,9 @@ public class Binding_Manager : MonoBehaviour
         // Unbind all of the callers within the group
         foreach (var caller in callers)
             UnbindKey(caller.BoundKeyCode);
+
+        // Unhook the listener
+        _group.m_OnCallCompleted.RemoveListener(this.OnCallGroupDisconnected);
     }
 
 

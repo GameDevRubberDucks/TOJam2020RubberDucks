@@ -98,7 +98,7 @@ public class Call_Manager : MonoBehaviour
         m_callLogUI.RemoveCallGroupUI(_callObj);
 
         // Either way, unhook the event and remove the call from the list
-        _callObj.m_OnCallCompleted.RemoveAllListeners();
+        _callObj.m_OnCallCompleted.RemoveListener(this.OnCallCompleted);
         m_callList.Remove(_callObj);
     }
 }
