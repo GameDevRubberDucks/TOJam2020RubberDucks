@@ -268,9 +268,9 @@ MonoBehaviour:
   m_MAX_NUM_CALLS: 20
   m_timeBetweenCalls: 5
   m_possibleWaitTimes:
-  - 15
-  - 30
-  - 45
+  - 60
+  - 60
+  - 60
   - 60
   m_possibleCallLengths:
   - 15

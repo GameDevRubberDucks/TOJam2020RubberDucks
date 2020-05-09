@@ -71,6 +71,19 @@ public class Room_Manager : MonoBehaviour
         return true;
     }
 
+    public void DisconnectCallers(List<Call_Individual> _callers)
+    {
+        // Remove all of the callers from their rooms
+        foreach(var caller in _callers)
+        {
+            // Get the room the caller is currently in
+            Room room = m_rooms[(int)caller.CurrentRoom];
+
+            // Remove the user from the room
+            room.RemoveCaller(caller);
+        }
+    }
+
 
 
     //--- Getters ---//

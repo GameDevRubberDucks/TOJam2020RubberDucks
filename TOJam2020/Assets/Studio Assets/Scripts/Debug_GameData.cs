@@ -69,20 +69,6 @@ public class Debug_GameData : MonoBehaviour
 
     public void ShowBindingInformation()
     {
-        //// Grab the keybindings from the manager and get the individual keys and values as well
-        //Dictionary<KeyCode, Call_Individual> keyBindings = m_bindingManager.KeyBindings;
-        //var keys = keyBindings.Keys;
-        //var values = keyBindings.Values;
-
-        //// Going to hold all of the key bindings together in a vertical list
-        //string bindingStr = "";
-
-        //// Iterate through the dictionary information and set it up to be output
-        //for(int i = 0; i < keys.Count && i < values.Count; i++)
-        //    bindingStr += keys[i].
-
-        //m_bindingText.text = m_bindingManager.KeyBindings.ToString();
-
         // Convert the dictionary to a string
         // Found here: https://stackoverflow.com/questions/5899171/is-there-anyway-to-handy-convert-a-dictionary-to-string
         string bindingTitle = "Key Bindings:\n";

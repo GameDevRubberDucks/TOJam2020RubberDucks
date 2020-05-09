@@ -142,8 +142,11 @@ public class Binding_Manager : MonoBehaviour
     public void DeselectAll()
     {
         // Loop through and deselect all of the individual callers
-        foreach (var caller in m_selectedCallers)
-            DeselectCaller(caller);
+        for (int i = 0; i < m_selectedCallers.Count; i++)
+        {
+            DeselectCaller(m_selectedCallers[i]);
+            i--;
+        }
     }
 
     public bool CheckIfBindingOpen(KeyCode _bindKey)
