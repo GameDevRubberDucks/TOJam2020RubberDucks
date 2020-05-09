@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class Room_Manager : MonoBehaviour
 {
     //--- Public Variables ---//
     public List<Room> m_rooms;
-
+ 
 
 
     //--- Unity Methods ---//
@@ -15,7 +16,7 @@ public class Room_Manager : MonoBehaviour
         foreach (var room in m_rooms)
             room.ClearCallerList();
     }
-    
+
 
 
     //--- Methods ---//
@@ -26,27 +27,48 @@ public class Room_Manager : MonoBehaviour
             m_rooms[(int)Room_Name.Unassigned].AddCallers(_callers);
     }
 
-    public bool TransferCallers(List<Call_Individual> _callers, Room _startRoom, Room _endRoom)
-    {
-        // Ensure that the rooms are capable of the planned removal / addition
-        bool canTransfer = (_startRoom.CheckForRemoval(_callers) && _endRoom.CheckForAdd(_callers));
-
-        // If the transfer cannot work, back out now
-        if (!canTransfer)
-            return false;
-
-        // Otherwise, perform the transfer
-        bool removeSuccess = _startRoom.RemoveCallers(_callers);
-        bool addSuccess = _endRoom.AddCallers(_callers);
-
-        // Return if the transfer was succesful on both ends
-        return (removeSuccess && addSuccess);
-    }
-
     public bool TransferCallers(List<Call_Individual> _callers, Room_Name _endRoom)
     {
-        // TODO: Write this function so that each caller can be coming from a DIFFERENT room
-        return false;
+        // Get the end room object
+        Room endRoom = m_rooms[(int)_endRoom];
+
+        // Ensure the end target room has enough space for everyone. If not, return false to say it failed
+        if (!endRoom.CheckForAdd(_callers))
+            return false;
+
+        // Loop through all of the callers and check all of the transfers to make sure they are all possible
+        foreach(var caller in _callers)
+        {
+            // Get the caller's starting room
+            Room startRoom = m_rooms[(int)caller.CurrentRoom];
+
+            // Check to see that the transfer is viable from the caller's current room
+            bool canPerformTransfer = startRoom.CheckForRemoval(caller);
+
+            // If the transfer cannot be performed, return false to indicate that it won't work
+            if (!canPerformTransfer)
+                return false;
+        }
+
+        // If everything checked out, it is now time to perform the actual transfers
+        foreach(var caller in _callers)
+        {
+            // Get the caller's starting room
+            Room startRoom = m_rooms[(int)caller.CurrentRoom];
+
+            // Remove the caller from its current room
+            bool removeSuccess = startRoom.RemoveCaller(caller);
+
+            // Add it to the new room
+            bool addSuccess = endRoom.AddCaller(caller);
+
+            // If either of the transfer components failed for some reason, we should return false to say this
+            if (!removeSuccess || !addSuccess)
+                return false;
+        }
+
+        // Return true to indicate everything worked
+        return true;
     }
 
 
