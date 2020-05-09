@@ -11,6 +11,8 @@ public class CallerLog_Script : MonoBehaviour
     public TextMeshProUGUI callDuration;
     public Image timerBar;
     public Image timerClock;
+    public TextMeshProUGUI[] bindingLetters;
+    public GameObject[] blockingImages;
 
     //Caller Variables
 
@@ -51,11 +53,29 @@ public class CallerLog_Script : MonoBehaviour
         timerBar.GetComponent<Image>().fillAmount = refGroup.GetWaitTimeRemaining() / waitTimeMax;
 
         timerClock.GetComponent<Image>().fillAmount = refGroup.GetCallTimeRemaining() / callTimeMax;
+
+        // Show all of the key bindings
+        for(int i = 0; i < refGroup.CallParticipants.Count; i++)
+        {
+            // Grab the caller reference
+            var caller = refGroup.CallParticipants[i];
+
+            // If the binding is empty, just ignore it
+            if (caller.BoundKeyCode == KeyCode.None)
+                continue;
+
+            // Otherwise, show the binding in the text box
+            bindingLetters[i].text = caller.BoundKeyCode.ToString();
+        }
     }
 
     public void InitWithData(Call_Group _attachedGroup)
     {
         refGroup = _attachedGroup;
+
+        // Show only the number of key binding slots that are needed for this call
+        for (int i = 0; i < _attachedGroup.GetNumParticipants(); i++)
+            blockingImages[i].SetActive(false);
     }
 
     public void OnClick()
