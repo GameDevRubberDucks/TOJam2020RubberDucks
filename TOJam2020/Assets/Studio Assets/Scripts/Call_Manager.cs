@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class Call_Manager : MonoBehaviour
@@ -97,8 +98,20 @@ public class Call_Manager : MonoBehaviour
         // Remove the UI element from the call backlog
         m_callLogUI.RemoveCallGroupUI(_callObj);
 
-        // Either way, unhook the event and remove the call from the list
+        // Unhook the event
         _callObj.m_OnCallCompleted.RemoveListener(this.OnCallCompleted);
+
+        // We should also remove the call from the list
+        // However, we need to wait until the end of the frame to ensure all the other call operations are complete
+        StartCoroutine(DeleteCall(_callObj));
+    }
+
+    public IEnumerator DeleteCall(Call_Group _callObj)
+    {
+        // Wait until the frame is over to ensure all other call operations are completed
+        yield return new WaitForEndOfFrame();
+
+        // Remove the caller from the list
         m_callList.Remove(_callObj);
     }
 }

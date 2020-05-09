@@ -42,9 +42,13 @@ public class CallerLog_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerBar.GetComponent<Image>().fillAmount = waitTimeRemaining / waitTimeMax;
+        //timerBar.GetComponent<Image>().fillAmount = waitTimeRemaining / waitTimeMax;
 
-        timerClock.GetComponent<Image>().fillAmount = callTimeRemaining / callTimeMax;
+        //timerClock.GetComponent<Image>().fillAmount = callTimeRemaining / callTimeMax;
+
+        timerBar.GetComponent<Image>().fillAmount = refGroup.GetWaitTimeRemaining() / waitTimeMax;
+
+        timerClock.GetComponent<Image>().fillAmount = refGroup.GetCallTimeRemaining() / callTimeMax;
     }
 
     public void InitWithData(Call_Group _attachedGroup)
@@ -59,5 +63,10 @@ public class CallerLog_Script : MonoBehaviour
 
         // Pass the binding manager the attached call group so it is able to place the keybindings afterwards
         bindingManager.CallGroupToBind = this.refGroup;
+    }
+
+    public Call_Group RefGroup
+    {
+        get => refGroup;
     }
 }
