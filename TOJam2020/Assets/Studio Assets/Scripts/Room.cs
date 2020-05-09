@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
-public class Room
+public class Room : MonoBehaviour
 {
     //--- Private Variables ---//
     private List<Call_Individual> m_callersInRoom;
