@@ -80,6 +80,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Room_HelperStructures.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room_UI.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Room_UI_Layout.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

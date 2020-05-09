@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System;
 using System.Collections.Generic;
 
 [Serializable]
 public class Room : MonoBehaviour
 {
+    //--- Public Variables ---//
+    [HideInInspector] public UnityEvent m_OnRoomCallersChanged;
+
+
+
     //--- Private Variables ---//
     private List<Call_Individual> m_callersInRoom;
     [SerializeField] private Room_Name m_roomName;
@@ -47,6 +53,9 @@ public class Room : MonoBehaviour
 
         // Add the caller to the list
         m_callersInRoom.Add(_newCaller);
+
+        // Invoke the event to indicate the room has changed
+        m_OnRoomCallersChanged.Invoke();
 
         // Return true to indicate the add worked
         return true;
@@ -101,6 +110,9 @@ public class Room : MonoBehaviour
 
         // The caller is now temporarily unassigned but should be re-assigned when being placed in another room
         _callerToRemove.CurrentRoom = Room_Name.Unassigned;
+
+        // Invoke the event to indicate the room has changed
+        m_OnRoomCallersChanged.Invoke();
 
         // Return true to indicate everything worked
         return true;
