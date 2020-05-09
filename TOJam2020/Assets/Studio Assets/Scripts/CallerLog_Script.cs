@@ -6,7 +6,6 @@ using TMPro;
 public class CallerLog_Script : MonoBehaviour
 {
     //--- Global Variable ---//
-
     //UI Variables
     public TextMeshProUGUI callers;
     public TextMeshProUGUI callDuration;

@@ -67,11 +67,14 @@
     <Compile Include="Assets\Studio Assets\Scripts\Call_Group.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_HelperStructures.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Individual.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Call_Individual_UI.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Manager.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Call_PortraitUI_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\CallerLog_Script.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\CallerLog_Scroll.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\CallerLog_UIManager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\CashCalculation_Script.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Debug_GameData.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Key_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room_HelperStructures.cs" />
