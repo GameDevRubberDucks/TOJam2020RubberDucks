@@ -51,4 +51,13 @@ public class CallerLog_Script : MonoBehaviour
     {
         refGroup = _attachedGroup;
     }
+
+    public void OnClick()
+    {
+        // Find the binding manager in the scene
+        Binding_Manager bindingManager = GameObject.FindObjectOfType<Binding_Manager>();
+
+        // Pass the binding manager the attached call group so it is able to place the keybindings afterwards
+        bindingManager.CallGroupToBind = this.refGroup;
+    }
 }

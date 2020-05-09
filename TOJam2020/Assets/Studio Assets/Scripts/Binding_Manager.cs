@@ -154,11 +154,39 @@ public class Binding_Manager : MonoBehaviour
         _caller.BoundKeyCode = _bindKey;
     }
 
+    public void UnbindKey(KeyCode _bindKey)
+    {
+        // Remove the caller from the bound key
+        m_keyBindings[_bindKey] = null;
+    }
+
+    public void OnCallGroupDisconnected(Call_Group _group, Call_State _finalState)
+    {
+        // Grab the call participants
+        List<Call_Individual> callers = _group.CallParticipants;
+
+        // Unbind all of the callers within the group
+        foreach (var caller in callers)
+            UnbindKey(caller.BoundKeyCode);
+    }
+
 
 
     //--- Setters and Getters ---//
     public List<Call_Individual> SelectedCallers
     {
         get => m_selectedCallers;
+    }
+
+    public Call_Group CallGroupToBind
+    {
+        set
+        {
+            // Store the group
+            m_groupToBind = value;
+
+            // Hook into the group's disconnect event so we can eventually unbind all the callers when it goes away
+            value.m_OnCallCompleted.AddListener(OnCallGroupDisconnected);
+        }
     }
 }
