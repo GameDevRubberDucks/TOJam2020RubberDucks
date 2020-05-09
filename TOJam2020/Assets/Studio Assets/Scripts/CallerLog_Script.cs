@@ -23,16 +23,19 @@ public class CallerLog_Script : MonoBehaviour
     private float callTimeMax = 0.0f;
     private float callTimeRemaining = 0.0f;
 
+    private float waitTimePercent = 0.0f;
+    private float callTimePercent = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()
     {
 
-        numCallers = refGroup.GetNumParticipants();
-        waitTimeMax = refGroup.GetWaitTimeMax();
-        waitTimeRemaining = refGroup.GetWaitTimeRemaining();
-        callTimeMax = refGroup.GetCallTimeMax();
-        callTimeRemaining = refGroup.GetCallTimeRemaining();
+        numCallers = 10;// refGroup.GetNumParticipants();
+        waitTimeMax = 40.0f;// refGroup.GetWaitTimeMax();
+        waitTimeRemaining = 20.0f;// refGroup.GetWaitTimeRemaining();
+        callTimeMax = 90.0f;// refGroup.GetCallTimeMax();
+        callTimeRemaining = 10.0f;// refGroup.GetCallTimeRemaining();
 
         callers.GetComponent<TextMeshProUGUI>().text= numCallers.ToString();
         callDuration.GetComponent<TextMeshProUGUI>().text = callTimeMax.ToString();
@@ -42,9 +45,12 @@ public class CallerLog_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerBar.GetComponent<Image>().fillAmount = waitTimeRemaining / waitTimeMax;
+        waitTimePercent = waitTimeRemaining / waitTimeMax;
+        callTimePercent = callTimeRemaining / callTimeMax;
 
-        timerClock.GetComponent<Image>().fillAmount = callTimeRemaining / callTimeMax;
+        timerBar.GetComponent<Image>().fillAmount = waitTimePercent;
+
+        timerClock.GetComponent<Image>().fillAmount = callTimePercent;
     }
 
     public void InitWithData(Call_Group _attachedGroup)
