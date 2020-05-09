@@ -10,6 +10,7 @@ public class Call_Individual_UI : MonoBehaviour
 
     //--- Private Variables ---//
     private Call_Individual m_refCaller;
+    private Call_Individual_UI[] m_siblings;
 
     
 
