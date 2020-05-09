@@ -82,6 +82,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6486127780325327018}
     m_Modifications:
+    - target: {fileID: 6881844684141619932, guid: 6979ba1eee9b5bd439ad5a0597968ac8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b659316e1bb3da8499ba404f4bc3a126,
+        type: 3}
+    - target: {fileID: 6881844684141619932, guid: 6979ba1eee9b5bd439ad5a0597968ac8,
+        type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881844684141619932, guid: 6979ba1eee9b5bd439ad5a0597968ac8,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881844684141619932, guid: 6979ba1eee9b5bd439ad5a0597968ac8,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7665061547268517569, guid: 6979ba1eee9b5bd439ad5a0597968ac8,
         type: 3}
       propertyPath: m_Name
@@ -217,7 +238,8 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 36.45
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3913037994148347440, guid: 6979ba1eee9b5bd439ad5a0597968ac8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6979ba1eee9b5bd439ad5a0597968ac8, type: 3}
 --- !u!224 &6556372215904280194 stripped
 RectTransform:
