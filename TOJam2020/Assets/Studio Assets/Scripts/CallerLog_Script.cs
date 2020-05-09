@@ -31,11 +31,11 @@ public class CallerLog_Script : MonoBehaviour
     void Start()
     {
 
-        numCallers = 10;// refGroup.GetNumParticipants();
-        waitTimeMax = 40.0f;// refGroup.GetWaitTimeMax();
-        waitTimeRemaining = 20.0f;// refGroup.GetWaitTimeRemaining();
-        callTimeMax = 90.0f;// refGroup.GetCallTimeMax();
-        callTimeRemaining = 10.0f;// refGroup.GetCallTimeRemaining();
+        numCallers = refGroup.GetNumParticipants();
+        waitTimeMax = refGroup.GetWaitTimeMax();
+        waitTimeRemaining =refGroup.GetWaitTimeRemaining();
+        callTimeMax = refGroup.GetCallTimeMax();
+        callTimeRemaining = refGroup.GetCallTimeRemaining();
 
         callers.GetComponent<TextMeshProUGUI>().text= numCallers.ToString();
         callDuration.GetComponent<TextMeshProUGUI>().text = callTimeMax.ToString();
