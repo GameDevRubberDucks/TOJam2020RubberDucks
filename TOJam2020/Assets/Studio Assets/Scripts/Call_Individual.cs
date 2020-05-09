@@ -3,8 +3,9 @@
 public class Call_Individual
 {
     //--- Private Variables ---//
-    private KeyCode m_boundKeyCode;
     private Room_Name m_currentRoom;
+    private KeyCode m_boundKeyCode;
+    private bool m_isSelected;
 
 
 
@@ -12,22 +13,29 @@ public class Call_Individual
     public Call_Individual()
     {
         // Init the private variables
-        m_boundKeyCode = KeyCode.None;
         m_currentRoom = Room_Name.Unassigned;
+        m_boundKeyCode = KeyCode.None;
+        m_isSelected = false;
     }
 
 
 
     //--- Getters and Setters ---//
+    public Room_Name CurrentRoom
+    {
+        get => m_currentRoom;
+        set => m_currentRoom = value;
+    }
+
     public KeyCode BoundKeyCode
     {
         get => m_boundKeyCode;
         set => m_boundKeyCode = value;
     }
 
-    public Room_Name CurrentRoom
+    public bool IsSelected
     {
-        get => m_currentRoom;
-        set => m_currentRoom = value;
+        get => m_isSelected;
+        set => m_isSelected = value;
     }
 }

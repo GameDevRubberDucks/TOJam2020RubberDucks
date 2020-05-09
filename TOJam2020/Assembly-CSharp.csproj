@@ -815,6 +815,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\CallerLog_UIManager.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Binding_Manager.cs" />
+>>>>>>> Dan
     <Compile Include="Assets\Studio Assets\Scripts\Call_Group.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_HelperStructures.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Individual.cs" />
