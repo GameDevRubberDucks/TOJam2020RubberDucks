@@ -73,6 +73,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\CallerLog_Script.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\CallerLog_Scroll.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\CallerLog_UIManager.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Caller_Randomization_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\CashCalculation_Script.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Day_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Debug_GameData.cs" />

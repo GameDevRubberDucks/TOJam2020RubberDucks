@@ -3145,7 +3145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clock: {fileID: 449574256}
   dailyEarnings: {fileID: 1314071171}
-  dayLengthIRL: 10
+  dayLengthIRL: 300
   dayStartTime: 9
   dayEndTime: 17
   dayCounter: 0
@@ -3982,6 +3982,7 @@ GameObject:
   - component: {fileID: 1922898734}
   - component: {fileID: 1922898733}
   - component: {fileID: 1922898740}
+  - component: {fileID: 1922898741}
   m_Layer: 0
   m_Name: Game_Controller
   m_TagString: Untagged
@@ -4185,6 +4186,38 @@ MonoBehaviour:
   - {fileID: 843436912}
   - {fileID: 843436911}
   - {fileID: 843436910}
+--- !u!114 &1922898741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922898732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a431c8bcd0d4243b8f57a3a4982e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_shirts:
+  - {fileID: -6862911467557413744, guid: d099822496aa54c41992af1281fef993, type: 3}
+  - {fileID: -1828816823273193214, guid: d099822496aa54c41992af1281fef993, type: 3}
+  - {fileID: 5197043004547181393, guid: d099822496aa54c41992af1281fef993, type: 3}
+  - {fileID: 4416413451655310760, guid: d099822496aa54c41992af1281fef993, type: 3}
+  m_faces:
+  - {fileID: 2219139219506461403, guid: 4b6f5bd5d8dd0eb419d0ccbe64c3696f, type: 3}
+  - {fileID: -5157534487506628549, guid: 4b6f5bd5d8dd0eb419d0ccbe64c3696f, type: 3}
+  - {fileID: -8105161602941361614, guid: 4b6f5bd5d8dd0eb419d0ccbe64c3696f, type: 3}
+  - {fileID: -2087588502864137851, guid: 4b6f5bd5d8dd0eb419d0ccbe64c3696f, type: 3}
+  m_eyes:
+  - {fileID: -73728861846049787, guid: 41a197c87a4f6f24aa37b33bdd5933d5, type: 3}
+  - {fileID: -9069497952265586160, guid: 41a197c87a4f6f24aa37b33bdd5933d5, type: 3}
+  - {fileID: -8276008435476575920, guid: 41a197c87a4f6f24aa37b33bdd5933d5, type: 3}
+  - {fileID: 5984666980688668532, guid: 41a197c87a4f6f24aa37b33bdd5933d5, type: 3}
+  m_mouths:
+  - {fileID: -3695736567652389636, guid: c38340b41427ba040a4a0f60179dec5b, type: 3}
+  - {fileID: -8475538013320922121, guid: c38340b41427ba040a4a0f60179dec5b, type: 3}
+  - {fileID: 979573567498392760, guid: c38340b41427ba040a4a0f60179dec5b, type: 3}
+  - {fileID: -2896900684137385956, guid: c38340b41427ba040a4a0f60179dec5b, type: 3}
 --- !u!224 &1956483735 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9038665266468311156, guid: a81926858c2c9744d89b5ebe411ab2c1,

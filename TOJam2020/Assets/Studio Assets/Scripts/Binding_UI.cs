@@ -63,12 +63,17 @@ public class Binding_UI : MonoBehaviour
         // Create portraits for all of the bindings
         foreach(KeyValuePair<KeyCode, Call_Individual> bindPair in newestBindings)
         {
-            // If this binding isn't set, just move on
+            // Determine the index for the placement in the UI
+            int uiKeyIndex = m_keyboardLayout.GetIndexFromKeyCode(bindPair.Key);
+
+            // Toggle the main keyboard letter so that it appears if the slot is empty but hides if a caller is in it
+            m_keyboardLetters[uiKeyIndex].gameObject.SetActive(bindPair.Value == null);
+
+            // If this binding isn't set, turn the key back on and then move on
             if (bindPair.Value == null)
                 continue;
 
-            // Otherwise, determine which key should hold the portrait and which caller the portrait should represent
-            int uiKeyIndex = m_keyboardLayout.GetIndexFromKeyCode(bindPair.Key);
+            // Otherwise, determine which which caller the portrait should represent
             Call_Individual caller = bindPair.Value;
 
             // Now, spawn a new portrait on the right UI key and set it up with the caller object

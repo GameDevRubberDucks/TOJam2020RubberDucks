@@ -3,9 +3,11 @@
 public class Call_Individual
 {
     //--- Private Variables ---//
+    private static int m_numTotal = 0;
     private Room_Name m_currentRoom;
     private KeyCode m_boundKeyCode;
     private bool m_isSelected;
+    private int m_id;
 
 
 
@@ -16,6 +18,10 @@ public class Call_Individual
         m_currentRoom = Room_Name.Unassigned;
         m_boundKeyCode = KeyCode.None;
         m_isSelected = false;
+
+        if (m_numTotal == 0)
+            m_numTotal = Random.Range(0, 500);
+        m_id = m_numTotal++;
     }
 
 
@@ -37,5 +43,10 @@ public class Call_Individual
     {
         get => m_isSelected;
         set => m_isSelected = value;
+    }
+
+    public int ID
+    {
+        get => m_id;
     }
 }
