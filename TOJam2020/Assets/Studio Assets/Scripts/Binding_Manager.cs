@@ -184,7 +184,10 @@ public class Binding_Manager : MonoBehaviour
     {
         // Bind the caller to the given key
         m_keyBindings[_bindKey] = _caller;
-        _caller.BoundKeyCode = _bindKey;
+
+        // Ensure the caller slot is actually filled. It could be empty
+        if (_caller != null)
+            _caller.BoundKeyCode = _bindKey;
     }
 
     public void UnbindKey(KeyCode _bindKey)
