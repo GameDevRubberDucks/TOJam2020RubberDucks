@@ -140,6 +140,20 @@ public class Room : MonoBehaviour
     {
         // Increase the capacity of the room
         m_maxCapacity++;
+
+        // If the capacity is now at 2, we should activate the room
+        if (m_maxCapacity == 2)
+            m_isActive = true;
+    }
+
+    public void ShrinkRoom()
+    {
+        // Decrease the capacity of the room
+        m_maxCapacity--;
+
+        // If the capacity is now below 2, we should deactivate the room
+        if (m_maxCapacity < 2)
+            m_isActive = false;
     }
 
     public void ActivateRoom()
@@ -149,6 +163,12 @@ public class Room : MonoBehaviour
 
         // Set the capacity to 2
         m_maxCapacity = 2;
+    }
+
+    public void DeactivateRoom()
+    {
+        // Disable the room
+        m_isActive = true;
     }
 
 
