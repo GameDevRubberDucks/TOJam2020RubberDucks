@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1812815954783381078}
   - component: {fileID: 3154860790391255228}
   - component: {fileID: 5601775048113975341}
+  - component: {fileID: 1531181248160138465}
   m_Layer: 5
   m_Name: Call_Screen
   m_TagString: Untagged
@@ -204,6 +205,21 @@ MonoBehaviour:
   - {fileID: 8323265745245949991}
   - {fileID: 8323265745363380612}
   - {fileID: 8323265744875429243}
+--- !u!114 &1531181248160138465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2507596790559177502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0, y: -3}
+  m_UseGraphicAlpha: 0
 --- !u!1 &2507596791481409551
 GameObject:
   m_ObjectHideFlags: 0
