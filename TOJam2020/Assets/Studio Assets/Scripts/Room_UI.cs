@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Room_UI : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Room_UI : MonoBehaviour
     public Image m_screenNumberLabel;
     public Sprite m_screenNumberOn;
     public Sprite m_screenNumberOff;
+    public TextMeshProUGUI m_screenNumberIndicator;
 
 
 
@@ -47,11 +49,17 @@ public class Room_UI : MonoBehaviour
         m_disconnectedScreen.SetActive(!m_roomRef.IsActive);
 
         // Change the label light to disconnected / connected state
-        //m_screenNumberLabel.sprite = (m_roomRef.IsActive) ? m_screenNumberOn : m_screenNumberOff;
+        m_screenNumberLabel.sprite = (m_roomRef.IsActive) ? m_screenNumberOn : m_screenNumberOff;
 
         // Enable the correct screen split layout for room depending on its current size
         m_activeLayout = m_screenLayouts[m_roomRef.MaxCapacity - 2];
         m_activeLayout.SetLayoutVisible(true);
+
+        // Show the correct room number
+        Room_Name roomName = m_roomRef.RoomName;
+        string roomNameStr = roomName.ToString();
+        string roomNumberStr = roomNameStr.Substring(roomNameStr.Length - 1, 1);
+        m_screenNumberIndicator.text = roomNumberStr;
     }
 
     public void OnRoomUpdated()

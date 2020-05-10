@@ -110,9 +110,10 @@ MonoBehaviour:
   - {fileID: 6662677536104616887}
   m_callerUIPrefab: {fileID: 0}
   m_roomRef: {fileID: 6141289347150895767}
-  m_screenNumberLabel: {fileID: 0}
-  m_screenNumberOn: {fileID: 0}
-  m_screenNumberOff: {fileID: 0}
+  m_screenNumberLabel: {fileID: 4282835819704185622}
+  m_screenNumberOn: {fileID: 21300000, guid: 3d05bdb035876c1478c1a8bd2d825091, type: 3}
+  m_screenNumberOff: {fileID: 21300000, guid: 2bd67e1894e223f419170d9da2dd648e, type: 3}
+  m_screenNumberIndicator: {fileID: 2484883514370430703}
 --- !u!114 &6141289347150895767
 MonoBehaviour:
   m_ObjectHideFlags: 0
