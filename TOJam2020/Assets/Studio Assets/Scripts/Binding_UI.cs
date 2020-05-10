@@ -14,6 +14,7 @@ public class Binding_UI : MonoBehaviour
     public Image m_swapKeyHighlight;
     public Color m_swapKeyOnColour;
     public Color m_swapKeyOffColour;
+    public Key_Animator[] m_keyAnimators;
 
 
 
@@ -37,7 +38,11 @@ public class Binding_UI : MonoBehaviour
 
     private void Awake()
     {
-        // Place all of the letters onto the keyboard
+        // Assign all of the key animators to their corresponding keycode
+        for (int i = 0; i < m_keyAnimators.Length; i++)
+            m_keyAnimators[i].AttachedKeyCode = m_keyboardLayout.m_keyList[i];
+
+        // Place all of the letters onto the keyboard;
         PlaceKeyboardLetters();
     }
 

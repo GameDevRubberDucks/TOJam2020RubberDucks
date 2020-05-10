@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775af7fe65adbc845b7b714f258ebe85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_disconnectIndicator: {fileID: 5782578161302523417}
+  m_disconnectedScreen: {fileID: 5782578161302523417}
   m_screenLayouts:
   - {fileID: 0}
   - {fileID: 0}
@@ -110,6 +110,9 @@ MonoBehaviour:
   - {fileID: 6662677536104616887}
   m_callerUIPrefab: {fileID: 0}
   m_roomRef: {fileID: 6141289347150895767}
+  m_screenNumberLabel: {fileID: 0}
+  m_screenNumberOn: {fileID: 0}
+  m_screenNumberOff: {fileID: 0}
 --- !u!114 &6141289347150895767
 MonoBehaviour:
   m_ObjectHideFlags: 0

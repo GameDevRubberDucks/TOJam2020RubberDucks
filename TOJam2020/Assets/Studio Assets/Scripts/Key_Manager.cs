@@ -8,6 +8,9 @@ public class Key_Manager : MonoBehaviour
     public KeyCode m_deselectKey;
     public KeyCode m_disconnectKey;
     public bool m_holdToSwap;
+    public Key_Animator m_swapKeyAnimator;
+    public Key_Animator m_deselectKeyAnimator;
+    public Key_Animator m_disconnectKeyAnimator;
 
 
 
@@ -23,6 +26,11 @@ public class Key_Manager : MonoBehaviour
         // Init the private variables
         m_bindingManager = GameObject.FindObjectOfType<Binding_Manager>();
         m_roomManager = GameObject.FindObjectOfType<Room_Manager>();
+
+        // Set up the special key animators
+        m_swapKeyAnimator.AttachedKeyCode = m_swapKey;
+        m_disconnectKeyAnimator.AttachedKeyCode = m_disconnectKey;
+        m_deselectKeyAnimator.AttachedKeyCode = m_deselectKey;
     }
 
     private void Update()

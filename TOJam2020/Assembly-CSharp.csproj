@@ -77,6 +77,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\CashCalculation_Script.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Day_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Debug_GameData.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Key_Animator.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Key_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Keyboard_Layout.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room.cs" />
