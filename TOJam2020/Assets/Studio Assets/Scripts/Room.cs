@@ -136,6 +136,21 @@ public class Room : MonoBehaviour
         return true;
     }
 
+    public void ExpandRoom()
+    {
+        // Increase the capacity of the room
+        m_maxCapacity++;
+    }
+
+    public void ActivateRoom()
+    {
+        // Enable the room
+        m_isActive = true;
+
+        // Set the capacity to 2
+        m_maxCapacity = 2;
+    }
+
 
 
     //--- Getters and Setters ---//
@@ -165,5 +180,10 @@ public class Room : MonoBehaviour
     public List<Call_Individual> Callers
     {
         get => m_callersInRoom;
+    }
+
+    public bool CanBeExpanded
+    {
+        get => m_maxCapacity < 5;
     }
 }
