@@ -1,8 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
 
 public class Binding_Manager : MonoBehaviour
 {
+    //--- Public Variables ---//
+    [HideInInspector] public UnityEvent m_OnBindingsChanged; 
+
+
+
     //--- Private Variables ---//
     private List<Call_Individual> m_selectedCallers;
     private Dictionary<KeyCode, Call_Individual> m_keyBindings;
@@ -64,6 +70,9 @@ public class Binding_Manager : MonoBehaviour
                 BindCallerToKey(m_keyToSwap, m_keyBindings[_alphabetKey]);
                 BindCallerToKey(_alphabetKey, tempCaller);
 
+                // Invoke the event since the key bindings have changed
+                m_OnBindingsChanged.Invoke();
+
                 // Clear the held swap key
                 m_keyToSwap = KeyCode.None;
             }
@@ -89,6 +98,9 @@ public class Binding_Manager : MonoBehaviour
 
                 // Otherwise, we can go ahead and perform the binding
                 BindCallerToKey(_alphabetKey, caller);
+
+                // Invoke the event since the key bindings have changed
+                m_OnBindingsChanged.Invoke();
 
                 // We should also mark the caller as selected to make it easier to move it around after
                 SelectCaller(caller);
@@ -176,6 +188,9 @@ public class Binding_Manager : MonoBehaviour
         // Unbind all of the callers within the group
         foreach (var caller in callers)
             UnbindKey(caller.BoundKeyCode);
+
+        // Invoke the event since the key bindings have changed
+        m_OnBindingsChanged.Invoke();
 
         // Unhook the listener
         _group.m_OnCallCompleted.RemoveListener(this.OnCallGroupDisconnected);

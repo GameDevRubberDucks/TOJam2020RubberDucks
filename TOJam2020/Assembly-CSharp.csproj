@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Studio Assets\Scripts\Binding_Manager.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Binding_UI.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Group.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_HelperStructures.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Call_Individual.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Day_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Debug_GameData.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Key_Manager.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Keyboard_Layout.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room_HelperStructures.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room_Manager.cs" />
