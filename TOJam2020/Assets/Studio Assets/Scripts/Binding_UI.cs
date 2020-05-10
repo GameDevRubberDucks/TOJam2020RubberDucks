@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class Binding_UI : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Binding_UI : MonoBehaviour
     public Binding_Manager m_bindingManager;
     public GameObject m_callerUIPrefab;
     public Transform[] m_keyPortraitParents;
+    public TextMeshProUGUI[] m_keyboardLetters;
 
 
 
@@ -22,6 +24,12 @@ public class Binding_UI : MonoBehaviour
     {
         // Unregister from the binding manager's listener
         m_bindingManager.m_OnBindingsChanged.RemoveListener(this.UpdateBindings);
+    }
+
+    private void Awake()
+    {
+        // Place all of the letters onto the keyboard
+        PlaceKeyboardLetters();
     }
 
 
@@ -67,6 +75,22 @@ public class Binding_UI : MonoBehaviour
             GameObject portraitObj = Instantiate(m_callerUIPrefab, m_keyPortraitParents[uiKeyIndex]);
             Call_Individual_UI uiComp = portraitObj.GetComponent<Call_Individual_UI>();
             uiComp.InitWithData(caller);
+        }
+    }
+
+    public void PlaceKeyboardLetters()
+    {
+        // Use the assigned keyboard layout and fill in the letters on the keyboard accordingly
+        for(int i = 0; i < m_keyboardLetters.Length; i++)
+        {
+            // Grab the keycode that is associated with this key
+            KeyCode keyCode = m_keyboardLayout.m_keyList[i];
+
+            // Convert it to a string
+            string keyString = keyCode.ToString();
+
+            // Place it into the UI object
+            m_keyboardLetters[i].text = keyString;
         }
     }
 }

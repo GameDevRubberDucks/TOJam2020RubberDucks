@@ -3284,7 +3284,7 @@ PrefabInstance:
     - target: {fileID: 1640080908362983592, guid: 1bb7d929913c3a1448adeb0fd3063487,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 599.0604
+      value: 539.99994
       objectReference: {fileID: 0}
     - target: {fileID: 1640080908922342154, guid: 1bb7d929913c3a1448adeb0fd3063487,
         type: 3}
@@ -3710,6 +3710,7 @@ MonoBehaviour:
   - {fileID: 1654194888}
   - {fileID: 410958018}
   - {fileID: 379228887}
+  m_keyboardLetters: []
 --- !u!114 &1922898741
 MonoBehaviour:
   m_ObjectHideFlags: 0
