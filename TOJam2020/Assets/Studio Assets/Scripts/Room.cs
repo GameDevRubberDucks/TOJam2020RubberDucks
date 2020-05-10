@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
-public class Room
+public class Room : MonoBehaviour
 {
     //--- Private Variables ---//
     private List<Call_Individual> m_callersInRoom;
@@ -20,6 +20,12 @@ public class Room
         m_callersInRoom = new List<Call_Individual>();
     }
 
+    public bool CheckForAdd()
+    {
+        // Check if there is space for at least one more person to be added or not
+        return (m_maxCapacity - m_callersInRoom.Count > 0);
+    }
+
     public bool CheckForAdd(List<Call_Individual> _newCallers)
     {
         // If this room isn't active, there is no capacity
@@ -30,22 +36,44 @@ public class Room
         return (_newCallers.Count <= (m_maxCapacity - m_callersInRoom.Count));
     }
 
+    public bool AddCaller(Call_Individual _newCaller)
+    {
+        // Ensure this will work
+        if (!CheckForAdd())
+            return false;
+
+        // Tell the caller they now belong to this room
+        _newCaller.CurrentRoom = m_roomName;
+
+        // Add the caller to the list
+        m_callersInRoom.Add(_newCaller);
+
+        // Return true to indicate the add worked
+        return true;
+    }
+
     public bool AddCallers(List<Call_Individual> _newCallers)
     {
         // Perform a check to ensure this will work
         if (!CheckForAdd(_newCallers))
             return false;
 
-        // Add the participants to the list
-        foreach (var newCaller in _newCallers)
-            m_callersInRoom.Add(newCaller);
-
-        // Tell all of the participants that they are now in this room
-        foreach (var activeCaller in m_callersInRoom)
-            activeCaller.CurrentRoom = m_roomName;
+        // Add the new callers
+        foreach (var caller in _newCallers)
+        {
+            // If adding failed, return false to indicate this
+            if (!AddCaller(caller))
+                return false;
+        }
 
         // Return true to indicate the add worked
         return true;
+    }
+
+    public bool CheckForRemoval(Call_Individual _callerToRemove)
+    {
+        // Return true if the caller is in the room, false otherwise
+        return (m_callersInRoom.Contains(_callerToRemove));
     }
 
     public bool CheckForRemoval(List<Call_Individual> _callersToRemove)
@@ -54,13 +82,29 @@ public class Room
         foreach(var caller in _callersToRemove)
         {
             // If one of the callers isn't actually in this room, return false to say it won't work
-            if (!m_callersInRoom.Contains(caller))
+            if (!CheckForRemoval(caller))
                 return false;
         }
 
         // All of the callers are in the room so return true to indicate that the removal will work
         return true;
     }   
+
+    public bool RemoveCaller(Call_Individual _callerToRemove)
+    {
+        // Perform a check to ensure this will work
+        if (!CheckForRemoval(_callerToRemove))
+            return false;
+
+        // Remove the caller from the list
+        m_callersInRoom.Remove(_callerToRemove);
+
+        // The caller is now temporarily unassigned but should be re-assigned when being placed in another room
+        _callerToRemove.CurrentRoom = Room_Name.Unassigned;
+
+        // Return true to indicate everything worked
+        return true;
+    }
 
     public bool RemoveCallers(List<Call_Individual> _callersToRemove)
     {
@@ -71,11 +115,9 @@ public class Room
         // Remove the participant from this room
         foreach (var caller in _callersToRemove)
         {
-            // Remove the caller from the list
-            m_callersInRoom.Remove(caller);
-
-            // The caller is now temporarily unassigned but should be re-assigned when being placed in another room
-            caller.CurrentRoom = Room_Name.Unassigned;
+            // Remove the caller but return false if it fails
+            if (!RemoveCaller(caller))
+                return false;
         }
 
         // Return true to indicate the removal worked
@@ -101,5 +143,15 @@ public class Room
     {
         get => m_isActive;
         set => m_isActive = value;
+    }
+
+    public int CurrentCapacity
+    {
+        get => m_callersInRoom.Count;
+    }
+
+    public List<Call_Individual> Callers
+    {
+        get => m_callersInRoom;
     }
 }

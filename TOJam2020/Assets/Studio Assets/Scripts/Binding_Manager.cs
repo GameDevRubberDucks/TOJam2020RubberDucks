@@ -6,6 +6,7 @@ public class Binding_Manager : MonoBehaviour
     //--- Private Variables ---//
     private List<Call_Individual> m_selectedCallers;
     private Dictionary<KeyCode, Call_Individual> m_keyBindings;
+    private Room_Manager m_roomManager;
     private KeyCode m_keyToSwap;
     private bool m_isInSwapMode;
     private Call_Group m_groupToBind;
@@ -18,6 +19,7 @@ public class Binding_Manager : MonoBehaviour
         // Init the private variables
         m_selectedCallers = new List<Call_Individual>();
         m_keyBindings = new Dictionary<KeyCode, Call_Individual>();
+        m_roomManager = GameObject.FindObjectOfType<Room_Manager>();
         m_keyToSwap = KeyCode.None;
         m_isInSwapMode = false;
         m_groupToBind = null;
@@ -91,6 +93,9 @@ public class Binding_Manager : MonoBehaviour
                 // We should also mark the caller as selected to make it easier to move it around after
                 SelectCaller(caller);
 
+                // We now also need to move the caller into the waiting room
+                m_roomManager.TransferCallers(new List<Call_Individual> { caller }, Room_Name.Waiting);
+
                 // If this is the last caller, then the group is fully bound and we can unlink it
                 if (i == callers.Count - 1)
                     m_groupToBind = null;
@@ -137,8 +142,11 @@ public class Binding_Manager : MonoBehaviour
     public void DeselectAll()
     {
         // Loop through and deselect all of the individual callers
-        foreach (var caller in m_selectedCallers)
-            DeselectCaller(caller);
+        for (int i = 0; i < m_selectedCallers.Count; i++)
+        {
+            DeselectCaller(m_selectedCallers[i]);
+            i--;
+        }
     }
 
     public bool CheckIfBindingOpen(KeyCode _bindKey)
@@ -191,5 +199,10 @@ public class Binding_Manager : MonoBehaviour
             // Hook into the group's disconnect event so we can eventually unbind all the callers when it goes away
             value.m_OnCallCompleted.AddListener(OnCallGroupDisconnected);
         }
+    }
+
+    public Dictionary<KeyCode, Call_Individual> KeyBindings
+    {
+        get => m_keyBindings;
     }
 }

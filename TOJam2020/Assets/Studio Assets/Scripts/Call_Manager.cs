@@ -27,7 +27,7 @@ public class Call_Manager : MonoBehaviour
         m_roomManager = GameObject.FindObjectOfType<Room_Manager>();
         m_callLogUI = GameObject.FindObjectOfType<CallerLog_UIManager>();
         m_callList = new List<Call_Group>();
-        m_timeSinceLastCall = 0.0f;
+        m_timeSinceLastCall = m_timeBetweenCalls;
     }
 
     private void Update()
@@ -101,6 +101,9 @@ public class Call_Manager : MonoBehaviour
 
         // Unhook the event
         _callObj.m_OnCallCompleted.RemoveListener(this.OnCallCompleted);
+
+        // Remove the callers from their associated rooms
+        m_roomManager.DisconnectCallers(_callObj.CallParticipants);
 
         // We should also remove the call from the list
         // However, we need to wait until the end of the frame to ensure all the other call operations are complete
