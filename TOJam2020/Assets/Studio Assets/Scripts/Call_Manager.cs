@@ -23,7 +23,7 @@ public class Call_Manager : MonoBehaviour
     private int callsCompletedTotal; // In case we want career how many calls they have completed
     private int callsCompletedDaily; //How many calls completed in the day
     public TextMeshProUGUI totalCash;
-    public TextMeshProUGUI callCash;
+    //public TextMeshProUGUI callCash;
 
 
     //--- Unity Methods ---//
@@ -34,8 +34,8 @@ public class Call_Manager : MonoBehaviour
         m_callLogUI = GameObject.FindObjectOfType<CallerLog_UIManager>();
         m_callList = new List<Call_Group>();
         m_timeSinceLastCall = m_timeBetweenCalls;
-        totalCash = GameObject.Find("Total Cash").GetComponent<TextMeshProUGUI>();
-        callCash = GameObject.Find("Call Cash").GetComponent<TextMeshProUGUI>();
+        totalCash = GameObject.Find("Txt_Money").GetComponent<TextMeshProUGUI>();
+        //callCash = GameObject.Find("Call Cash").GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
@@ -100,11 +100,12 @@ public class Call_Manager : MonoBehaviour
         {
             // TODO: Play positive feedback
 
-            // TODO: Add points, reputation, etc
-
+            // Add points, reputation, etc
             callsCompletedDaily++;
+            GameObject.FindObjectOfType<CashCalculation_Script>().CalculateCashForCall(_callObj);
 
-            callCash.GetComponent<TextMeshProUGUI>().text = GameObject.FindObjectOfType<CashCalculation_Script>().CalculateCashForCall(_callObj).ToString();
+
+            //callCash.GetComponent<TextMeshProUGUI>().text = GameObject.FindObjectOfType<CashCalculation_Script>().CalculateCashForCall(_callObj).ToString();
             totalCash.GetComponent<TextMeshProUGUI>().text = GameObject.FindObjectOfType<CashCalculation_Script>().TotalCashEarned().ToString(); //Returns Total Cash
             //Debug the new money recieved.
             //Debug.Log(this.GetComponent<CashCalculation_Script>().CalculateCashForCall(_callObj));

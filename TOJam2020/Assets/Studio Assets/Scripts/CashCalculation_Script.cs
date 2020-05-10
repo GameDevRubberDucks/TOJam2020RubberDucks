@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CashCalculation_Script : MonoBehaviour
 {
+    public TextMeshProUGUI txtTotalCash;
+
     private float totalCash = 0.0f;
     private const float cashCallComplete = 100.0f;
     private const float fullCallCompleteBonus = 100.0f;
@@ -25,6 +28,12 @@ public class CashCalculation_Script : MonoBehaviour
     void Start()
     {
         
+    }
+
+    private void Update()
+    {
+        // Display the total amount of money
+        txtTotalCash.text = "$" + Mathf.FloorToInt(totalCash).ToString();
     }
 
     //Call this function when the group disconnects
@@ -72,7 +81,7 @@ public class CashCalculation_Script : MonoBehaviour
         //Debug.Log("Streak " + streakBonus);
 
         //Return the cash earned from the call
-        return newCash ;
+        return newCash;
     }
 
     //Called to see how much you made in one day

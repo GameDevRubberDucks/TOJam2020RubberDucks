@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 public class Day_Manager : MonoBehaviour
 {
     //--- TextMeshs ---//
     public TextMeshProUGUI clock;
-    public TextMeshProUGUI dailyEarnings;
+    //public TextMeshProUGUI dailyEarnings;
     //public TextMeshProUGUI clock;
     
     public float dayLengthIRL = 10.0f;
@@ -31,6 +32,10 @@ public class Day_Manager : MonoBehaviour
 
     public GameObject cashCalculator;
 
+    // UI representations
+    public Image dayProgressBar;
+    public TextMeshProUGUI txtDayCounter;
+
     public static Day_Manager _instance;
 
 
@@ -40,6 +45,7 @@ public class Day_Manager : MonoBehaviour
        
         dayLengthIG = dayEndTime - dayStartTime;
         timeElapsed = 0.0f;
+        txtDayCounter.text = "Day " + (dayCounter + 1).ToString();
 
         if (_instance == null)
         {
@@ -55,8 +61,8 @@ public class Day_Manager : MonoBehaviour
             }
         }
 
-        clock = null ?? GameObject.Find("Clock").GetComponent<TextMeshProUGUI>();
-        dailyEarnings = null ?? GameObject.Find("Daily Earning").GetComponent<TextMeshProUGUI>();
+        clock = null ?? GameObject.Find("Timer").GetComponent<TextMeshProUGUI>();
+        //dailyEarnings = null ?? GameObject.Find("Daily Earning").GetComponent<TextMeshProUGUI>();
         cashCalculator = null ?? GameObject.Find("Game_Controller");
 
 
@@ -73,7 +79,7 @@ public class Day_Manager : MonoBehaviour
             if (timeElapsed >= dayLengthIRL)
             {
             //Call CalculateEndOfDayMoney
-            dailyEarnings.GetComponent<TextMeshProUGUI>().text = "$ " + this.GetComponent<CashCalculation_Script>().CalculateCashForDay(dayCounter + 1).ToString(); ;
+            //dailyEarnings.GetComponent<TextMeshProUGUI>().text = "$ " + this.GetComponent<CashCalculation_Script>().CalculateCashForDay(dayCounter + 1).ToString(); ;
 
                 //Incerment Day counter
                 dayCounter++;
@@ -102,6 +108,7 @@ public class Day_Manager : MonoBehaviour
         {
 
             timeElapsedLERP = timeElapsed / dayLengthIRL; // This is the percent of the day that has gone by
+            dayProgressBar.fillAmount = timeElapsedLERP;
 
             dayLengthIG = (dayEndTime * 60.0f) - (dayStartTime * 60.0f);
 
