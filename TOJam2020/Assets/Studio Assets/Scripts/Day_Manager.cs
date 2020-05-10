@@ -5,7 +5,11 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class Day_Manager : MonoBehaviour
 {
+    //--- TextMeshs ---//
     public TextMeshProUGUI clock;
+    public TextMeshProUGUI dailyEarnings;
+    //public TextMeshProUGUI clock;
+    
     public float dayLengthIRL = 10.0f;
     private float dayLengthIG = 0.0f;
 
@@ -26,7 +30,8 @@ public class Day_Manager : MonoBehaviour
     public bool playing = true;
 
     public GameObject cashCalculator;
-    public GameObject singletonEventSystem;
+
+    public static Day_Manager _instance;
 
 
     // Start is called before the first frame update
@@ -36,20 +41,23 @@ public class Day_Manager : MonoBehaviour
         dayLengthIG = dayEndTime - dayStartTime;
         timeElapsed = 0.0f;
 
-
-        GameObject.FindObjectOfType<Day_Manager>();
-        singletonEventSystem = GameObject.Find("EventSystem");
-       if(singletonEventSystem != null )
-       {
-            Destroy(singletonEventSystem);
-       }
-       else
+        if (_instance == null)
         {
-            singletonEventSystem.name = "EventSystemForever";
+            _instance = GameObject.FindObjectOfType<Day_Manager>();
+            
+            if (_instance != null && _instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                _instance = this;
+            }
         }
 
         clock = null ?? GameObject.Find("Clock").GetComponent<TextMeshProUGUI>();
-        cashCalculator = null ?? GameObject.Find("EventSystem");
+        dailyEarnings = null ?? GameObject.Find("Daily Earning").GetComponent<TextMeshProUGUI>();
+        cashCalculator = null ?? GameObject.Find("Game_Controller");
 
 
         
@@ -65,7 +73,7 @@ public class Day_Manager : MonoBehaviour
             if (timeElapsed >= dayLengthIRL)
             {
             //Call CalculateEndOfDayMoney
-            this.GetComponent<CashCalculation_Script>().CalculateCashForDay();
+            dailyEarnings.GetComponent<TextMeshProUGUI>().text = "$ " + this.GetComponent<CashCalculation_Script>().CalculateCashForDay(dayCounter + 1).ToString(); ;
 
                 //Incerment Day counter
                 dayCounter++;
@@ -80,11 +88,6 @@ public class Day_Manager : MonoBehaviour
                 DontDestroyOnLoad(this.gameObject);
                 SceneManager.LoadScene("EndOfWeek");
             }
-            else if (dayCounter == 2)
-            {
-                DontDestroyOnLoad(this.gameObject);
-                SceneManager.LoadScene("Kody");
-            }
             else
             {
 
@@ -97,17 +100,12 @@ public class Day_Manager : MonoBehaviour
 
         if (clock)
         {
-            //Fine Time elapsed / time remaining
+
             timeElapsedLERP = timeElapsed / dayLengthIRL; // This is the percent of the day that has gone by
 
             dayLengthIG = (dayEndTime * 60.0f) - (dayStartTime * 60.0f);
 
-            Debug.Log("LErp: " + timeElapsedLERP);
-
-            //timeElapsedIGLERP = dayLengthIG * timeElapsedLERP;
             timeElapsedIGLERP = Mathf.Lerp((dayStartTime * 60.0f), (dayEndTime * 60.0f), timeElapsedLERP);
-
-            Debug.Log("DayLErp: " + timeElapsedIGLERP);
 
             hours = (int)timeElapsedIGLERP / 60;
             minutes = (int)timeElapsedIGLERP % 60;
