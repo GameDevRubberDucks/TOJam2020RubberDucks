@@ -67,6 +67,7 @@ public class CashCalculation_Script : MonoBehaviour
         return totalCash;
     }
 
+    //Called to see how much you made in one day
     public float CalculateCashForDay ()
     {
         //Calculates day bonus

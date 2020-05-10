@@ -93,6 +93,7 @@ public class Call_Manager : MonoBehaviour
             // TODO: Play positive feedback
 
             // TODO: Add points, reputation, etc
+            this.GetComponent<CashCalculation_Script>().CalculateCashForCall(_callObj); //Returns Total Cash
         }
 
         // Remove the UI element from the call backlog
