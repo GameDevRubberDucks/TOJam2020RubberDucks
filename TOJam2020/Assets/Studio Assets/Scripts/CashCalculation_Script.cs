@@ -12,7 +12,7 @@ public class CashCalculation_Script : MonoBehaviour
     private float timeLeftPercent = 0.0f; 
     private float timeMax = 0.0f;
     private const float endOfDayBonus = 25.0f;
-    private float dayCounter = 0.0f;
+    //private float dayCounter = 0.0f;
     private const float streakConst = 10.0f;
     private float streak = 0.0f;
 
@@ -37,45 +37,60 @@ public class CashCalculation_Script : MonoBehaviour
 
         //Calculates money based on how many people are in the call
         float perPersonCash = disGroup.GetNumParticipants() * cashPerPersonInCall;
-
         //Calculates the penalty for patience
         patienceLeft = disGroup.GetWaitTimeRemaining() / disGroup.GetWaitTimeMax(); 
-        if (patienceLeft <= 0.33)
+        if (patienceLeft >= 0.66)
         {
-            patiencePenalty = 0.0f;
+            patiencePenalty = 1.0f;
         }
         else
         {
             patiencePenalty = patienceLeft;
         }
         
-        timeMax = disGroup.GetCallTimeMax();
+        //This is only for if they didnt complete the call fully 
         //Bonus for completing a call. Depending on the amount of time left in the call. Less time = more money , More time = less money
+        timeMax = disGroup.GetCallTimeMax();
         timeLeftPercent = disGroup.GetCallTimeRemaining() / timeMax;
-        float timeLeftBonus = cashCallComplete * (1.0f - timeLeftPercent) * patiencePenalty;
-
+        float timeLeftBonus = cashCallComplete * (1.0f - timeLeftPercent) * patiencePenalty;  // Little off but not bad
         //Calculates Streak bonus
         float streakBonus = streakConst * streak;
 
-        
 
         newCash = perPersonCash + timeLeftBonus + fullCallCompleteBonus + streakBonus;
+        
 
         totalCash += newCash;
-
+        
+        //Adds the calls earned cash into the daily earning
         daysEarning += newCash;
-        return totalCash;
+        
+        //--- Debugs to check cash values ---//
+        //Debug.Log("Per Person " + perPersonCash);
+        //Debug.Log("Patient Pen " + patiencePenalty);
+        //Debug.Log("Tl bonus " + timeLeftBonus);
+        //Debug.Log("Streak " + streakBonus);
+
+        //Return the cash earned from the call
+        return newCash ;
     }
 
     //Called to see how much you made in one day
-    public float CalculateCashForDay ()
+    public float CalculateCashForDay (int dayCounter)
     {
         //Calculates day bonus
         float dayBonus = endOfDayBonus * dayCounter;
 
         daysEarning += dayBonus;
-
+        //Return the earnings for that day (all calls plus end of day bonus)
         return daysEarning;
+    }
+
+
+    //Get total cash
+    public float TotalCashEarned()
+    {
+        return totalCash;
     }
 
     //Getter if we want a breakdown section at the end of days
