@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
@@ -10,7 +11,14 @@ public class Binding_UI : MonoBehaviour
     public GameObject m_callerUIPrefab;
     public Transform[] m_keyPortraitParents;
     public TextMeshProUGUI[] m_keyboardLetters;
-    public GameObject m_swapModeHighlight;
+    public Image m_swapKeyHighlight;
+    public Color m_swapKeyOnColour;
+    public Color m_swapKeyOffColour;
+
+
+
+    //--- Private Variables ---//
+    private KeyCode m_prevSwapKey;
 
 
 
@@ -35,8 +43,30 @@ public class Binding_UI : MonoBehaviour
 
     private void Update()
     {
-        // Show / hide the swap mode highlight depending on if currently in swap mode
-        m_swapModeHighlight.SetActive(m_bindingManager.IsInSwapMode);
+        // Show / hide the swap mode highlight on the special key depending on if currently in swap mode
+        m_swapKeyHighlight.color = (m_bindingManager.IsInSwapMode) ? m_swapKeyOnColour : m_swapKeyOffColour;
+
+        // Manage the swap highlight on the letter keys if there was a change in the swap keys
+        if (m_bindingManager.KeyToSwap != m_prevSwapKey)
+        {
+            // Turn off the previous swap key highlight
+            // The swap highlight is currently just the portrait parent
+            if (m_prevSwapKey != KeyCode.None)
+            {
+                int prevKeyIdx = m_keyboardLayout.GetIndexFromKeyCode(m_prevSwapKey);
+                m_keyPortraitParents[prevKeyIdx].GetComponent<Image>().color = m_swapKeyOffColour;
+            }
+            
+            // Turn on the new key highlight if there is one
+            if (m_bindingManager.KeyToSwap != KeyCode.None)
+            {
+                int newKeyIdx = m_keyboardLayout.GetIndexFromKeyCode(m_bindingManager.KeyToSwap);
+                m_keyPortraitParents[newKeyIdx].GetComponent<Image>().color = m_swapKeyOnColour;
+            }
+
+            // Store the updated key
+            m_prevSwapKey = m_bindingManager.KeyToSwap;
+        }
     }
 
 

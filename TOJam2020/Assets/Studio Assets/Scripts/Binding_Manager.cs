@@ -73,6 +73,8 @@ public class Binding_Manager : MonoBehaviour
             {
                 // Store the key so that next time, we are able to actually perform the swap
                 m_keyToSwap = _alphabetKey;
+
+                // Show the highlight for this key
             }
             else
             {
@@ -240,5 +242,10 @@ public class Binding_Manager : MonoBehaviour
     public bool IsInSwapMode
     {
         get => m_isInSwapMode;
+    }
+
+    public KeyCode KeyToSwap
+    {
+        get => m_keyToSwap;
     }
 }

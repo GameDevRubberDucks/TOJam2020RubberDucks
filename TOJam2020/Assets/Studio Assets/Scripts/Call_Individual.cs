@@ -22,6 +22,8 @@ public class Call_Individual
         // Randomize the first ID to ensure the characters are random each time
         if (m_numTotal == 0)
             m_numTotal = Random.Range(0, 500);
+
+        // Increment the ID by 1 afterwards
         m_id = m_numTotal++;
     }
 
