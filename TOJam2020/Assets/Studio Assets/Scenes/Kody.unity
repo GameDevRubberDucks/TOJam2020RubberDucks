@@ -203,7 +203,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 367658383}
   m_HandleRect: {fileID: 367658382}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -820,6 +820,8 @@ MonoBehaviour:
   callDuration: {fileID: 862460517}
   timerBar: {fileID: 2004052423}
   timerClock: {fileID: 1027738988}
+  bindingLetters: []
+  blockingImages: []
 --- !u!114 &862460517 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8022087481488423554, guid: 5c9f585d78fea1e45973fa9237df562f,

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class Call_Manager : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class Call_Manager : MonoBehaviour
     private List<Call_Group> m_callList;
     private float m_timeSinceLastCall;
 
+    private List<float> cashFromCall;
+    private int callsCompletedTotal; // In case we want career how many calls they have completed
+    private int callsCompletedDaily; //How many calls completed in the day
+    public TextMeshProUGUI totalCash;
+    public TextMeshProUGUI callCash;
 
 
     //--- Unity Methods ---//
@@ -28,6 +34,8 @@ public class Call_Manager : MonoBehaviour
         m_callLogUI = GameObject.FindObjectOfType<CallerLog_UIManager>();
         m_callList = new List<Call_Group>();
         m_timeSinceLastCall = m_timeBetweenCalls;
+        totalCash = GameObject.Find("Total Cash").GetComponent<TextMeshProUGUI>();
+        callCash = GameObject.Find("Call Cash").GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
@@ -93,7 +101,13 @@ public class Call_Manager : MonoBehaviour
             // TODO: Play positive feedback
 
             // TODO: Add points, reputation, etc
-            this.GetComponent<CashCalculation_Script>().CalculateCashForCall(_callObj); //Returns Total Cash
+
+            callsCompletedDaily++;
+
+            callCash.GetComponent<TextMeshProUGUI>().text = this.GetComponent<CashCalculation_Script>().CalculateCashForCall(_callObj).ToString();
+            totalCash.GetComponent<TextMeshProUGUI>().text = this.GetComponent<CashCalculation_Script>().TotalCashEarned().ToString(); //Returns Total Cash
+            //Debug the new money recieved.
+            //Debug.Log(this.GetComponent<CashCalculation_Script>().CalculateCashForCall(_callObj));
         }
 
         // Remove the UI element from the call backlog
