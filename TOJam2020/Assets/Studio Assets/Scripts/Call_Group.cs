@@ -16,6 +16,7 @@ public class Call_Group
     private float m_waitTimeRemaining;
     private float m_callTimeMax;
     private float m_callTimeRemaining;
+    private bool m_isInBindMode;
 
 
 
@@ -33,6 +34,7 @@ public class Call_Group
         m_waitTimeRemaining = m_waitTimeMax;
         m_callTimeMax = _callTimeMax;
         m_callTimeRemaining = m_callTimeMax;
+        m_isInBindMode = false;
 
         // Create the call participants and keep track of them
         for (int i = 0; i < m_numParticipants; i++)
@@ -126,5 +128,11 @@ public class Call_Group
     public List<Call_Individual> CallParticipants
     {
         get => m_callParticipants;
+    }
+
+    public bool IsInBindMode
+    {
+        get => m_isInBindMode;
+        set => m_isInBindMode = value;
     }
 }

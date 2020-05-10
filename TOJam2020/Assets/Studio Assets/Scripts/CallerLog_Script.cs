@@ -7,12 +7,23 @@ public class CallerLog_Script : MonoBehaviour
 {
     //--- Global Variable ---//
     //UI Variables
-    public TextMeshProUGUI callers;
+    public Image callerCountIcon;
+    public Sprite[] callerCountImages;
     public TextMeshProUGUI callDuration;
     public Image timerBar;
     public Image timerClock;
     public TextMeshProUGUI[] bindingLetters;
     public GameObject[] blockingImages;
+    public GameObject bindingModeIndicator;
+
+    [Header("Patience Meter")]
+    public Image patience_EmojiIndicator;
+    public Sprite patience_HappyIcon;
+    public Sprite patience_MediumIcon;
+    public Sprite patience_AngerIcon;
+    public Color patience_HappyColour;
+    public Color patience_MediumColour;
+    public Color patience_AngerColour;
 
     //Caller Variables
 
@@ -38,7 +49,7 @@ public class CallerLog_Script : MonoBehaviour
         callTimeMax = refGroup.GetCallTimeMax();
         callTimeRemaining = refGroup.GetCallTimeRemaining();
 
-        callers.GetComponent<TextMeshProUGUI>().text= numCallers.ToString();
+        callerCountIcon.sprite = callerCountImages[refGroup.GetNumParticipants() - 2];
         callDuration.GetComponent<TextMeshProUGUI>().text = callTimeMax.ToString();
 
     }
@@ -46,16 +57,23 @@ public class CallerLog_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //timerBar.GetComponent<Image>().fillAmount = waitTimeRemaining / waitTimeMax;
+        // Fill in the timer section
+        float callTimePercentage = (callTimeMax - refGroup.GetCallTimeRemaining()) / callTimeMax;
+        timerClock.GetComponent<Image>().fillAmount = callTimePercentage;
 
-        //timerClock.GetComponent<Image>().fillAmount = callTimeRemaining / callTimeMax;
+        // Lower the patience bar
+        float waitTimePercentage = refGroup.GetWaitTimeRemaining() / waitTimeMax;
+        timerBar.GetComponent<Image>().fillAmount = waitTimePercentage;
 
-        timerBar.GetComponent<Image>().fillAmount = refGroup.GetWaitTimeRemaining() / waitTimeMax;
+        // Set the happiness icon and the bar colour according to the patience remaining
+        patience_EmojiIndicator.sprite = (waitTimePercentage >= 0.75f) ? patience_HappyIcon : (waitTimePercentage >= 0.25f) ? patience_MediumIcon : patience_AngerIcon;
+        timerBar.color = (waitTimePercentage >= 0.75f) ? patience_HappyColour : (waitTimePercentage >= 0.25f) ? patience_MediumColour : patience_AngerColour;
 
-        timerClock.GetComponent<Image>().fillAmount = refGroup.GetCallTimeRemaining() / callTimeMax;
+        // Show / hide the binding mode indicator depending on if this group is currently selected for binding
+        bindingModeIndicator.SetActive(refGroup.IsInBindMode);
 
         // Show all of the key bindings
-        for(int i = 0; i < refGroup.CallParticipants.Count; i++)
+        for (int i = 0; i < refGroup.CallParticipants.Count; i++)
         {
             // Grab the caller reference
             var caller = refGroup.CallParticipants[i];

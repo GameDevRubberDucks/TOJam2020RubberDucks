@@ -73,8 +73,6 @@ public class Binding_Manager : MonoBehaviour
             {
                 // Store the key so that next time, we are able to actually perform the swap
                 m_keyToSwap = _alphabetKey;
-
-                // Show the highlight for this key
             }
             else
             {
@@ -125,7 +123,13 @@ public class Binding_Manager : MonoBehaviour
 
                 // If this is the last caller, then the group is fully bound and we can unlink it
                 if (i == callers.Count - 1)
+                {
+                    // The group is no longer in bind mode
+                    m_groupToBind.IsInBindMode = false;
+
+                    // Stop tracking the group
                     m_groupToBind = null;
+                }
 
                 // Finally, we should break the loop to prevent binding the next caller to the same key
                 break;
@@ -226,8 +230,29 @@ public class Binding_Manager : MonoBehaviour
     {
         set
         {
-            // Store the group
+            // If there was a group previously set, turn it off
+            if (m_groupToBind != null)
+                m_groupToBind.IsInBindMode = false;
+
+            // If the new binding group is aleady fully bound, back out
+            bool fullyBound = true;
+            for (int i = 0; i < value.CallParticipants.Count; i++)
+            {
+                // If anyone in the group is not bound, we can continue to set this to binding mode
+                if (value.CallParticipants[i].BoundKeyCode == KeyCode.None)
+                {
+                    fullyBound = false;
+                    break;
+                }
+            }
+            if (fullyBound)
+                return;
+
+            // Otherwise, if this is a valid call group to bind, store the group
             m_groupToBind = value;
+
+            // The group is now in binding mode
+            m_groupToBind.IsInBindMode = true;
 
             // Hook into the group's disconnect event so we can eventually unbind all the callers when it goes away
             value.m_OnCallCompleted.AddListener(OnCallGroupDisconnected);
