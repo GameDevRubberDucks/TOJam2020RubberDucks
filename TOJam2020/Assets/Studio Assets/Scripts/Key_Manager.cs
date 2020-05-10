@@ -7,6 +7,7 @@ public class Key_Manager : MonoBehaviour
     public KeyCode m_swapKey;
     public KeyCode m_deselectKey;
     public KeyCode m_disconnectKey;
+    public bool m_holdToSwap;
 
 
 
@@ -60,12 +61,19 @@ public class Key_Manager : MonoBehaviour
 
 
         // Handle the special keys
-        if (Input.GetKeyDown(m_swapKey))
+        if (m_holdToSwap)
         {
-            // Switch in and out of swap mode
-            m_bindingManager.ToggleSwapMode();
+            // Hold the swap button down, letting go goes back out of swap mode
+            m_bindingManager.SetSwapMode(Input.GetKey(m_swapKey));
         }
-        else if (Input.GetKeyDown(m_deselectKey))
+        else 
+        {
+            // Toggle swap mode on and off by pressing the key again
+            if (Input.GetKeyDown(m_swapKey))
+                m_bindingManager.ToggleSwapMode();
+        }
+        
+        if (Input.GetKeyDown(m_deselectKey))
         {
             // Deselect all of the selected callers at once
             m_bindingManager.DeselectAll();

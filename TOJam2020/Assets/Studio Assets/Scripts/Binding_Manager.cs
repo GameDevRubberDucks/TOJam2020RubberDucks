@@ -38,6 +38,19 @@ public class Binding_Manager : MonoBehaviour
 
 
     //--- Methods ---//
+    public bool SetSwapMode(bool _enabled)
+    {
+        // Set the swap mode
+        m_isInSwapMode = _enabled;
+
+        // If now out of swap mode, reset the stored key that was going to be swapped
+        if (!m_isInSwapMode)
+            m_keyToSwap = KeyCode.None;
+
+        // Return the new value
+        return m_isInSwapMode;
+    }
+
     public bool ToggleSwapMode()
     {
         // Swap in and out of swap mode
@@ -219,5 +232,10 @@ public class Binding_Manager : MonoBehaviour
     public Dictionary<KeyCode, Call_Individual> KeyBindings
     {
         get => m_keyBindings;
+    }
+
+    public bool IsInSwapMode
+    {
+        get => m_isInSwapMode;
     }
 }

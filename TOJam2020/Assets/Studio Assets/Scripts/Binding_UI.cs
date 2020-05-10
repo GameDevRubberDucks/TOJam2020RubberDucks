@@ -10,6 +10,7 @@ public class Binding_UI : MonoBehaviour
     public GameObject m_callerUIPrefab;
     public Transform[] m_keyPortraitParents;
     public TextMeshProUGUI[] m_keyboardLetters;
+    public GameObject m_swapModeHighlight;
 
 
 
@@ -30,6 +31,12 @@ public class Binding_UI : MonoBehaviour
     {
         // Place all of the letters onto the keyboard
         PlaceKeyboardLetters();
+    }
+
+    private void Update()
+    {
+        // Show / hide the swap mode highlight depending on if currently in swap mode
+        m_swapModeHighlight.SetActive(m_bindingManager.IsInSwapMode);
     }
 
 

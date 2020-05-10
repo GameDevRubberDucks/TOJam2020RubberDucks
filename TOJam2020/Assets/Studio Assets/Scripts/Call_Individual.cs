@@ -19,6 +19,7 @@ public class Call_Individual
         m_boundKeyCode = KeyCode.None;
         m_isSelected = false;
 
+        // Randomize the first ID to ensure the characters are random each time
         if (m_numTotal == 0)
             m_numTotal = Random.Range(0, 500);
         m_id = m_numTotal++;
