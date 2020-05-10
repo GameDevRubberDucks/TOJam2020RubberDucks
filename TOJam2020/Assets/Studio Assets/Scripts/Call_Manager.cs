@@ -104,8 +104,8 @@ public class Call_Manager : MonoBehaviour
 
             callsCompletedDaily++;
 
-            callCash.GetComponent<TextMeshProUGUI>().text = this.GetComponent<CashCalculation_Script>().CalculateCashForCall(_callObj).ToString();
-            totalCash.GetComponent<TextMeshProUGUI>().text = this.GetComponent<CashCalculation_Script>().TotalCashEarned().ToString(); //Returns Total Cash
+            callCash.GetComponent<TextMeshProUGUI>().text = GameObject.FindObjectOfType<CashCalculation_Script>().CalculateCashForCall(_callObj).ToString();
+            totalCash.GetComponent<TextMeshProUGUI>().text = GameObject.FindObjectOfType<CashCalculation_Script>().TotalCashEarned().ToString(); //Returns Total Cash
             //Debug the new money recieved.
             //Debug.Log(this.GetComponent<CashCalculation_Script>().CalculateCashForCall(_callObj));
         }
