@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Studio Assets/Scenes/Main.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Studio Assets/Scenes/Kody.unity
+    guid: e2bf92a97a6b0d342a62290b647aed7a
+  - enabled: 1
+    path: Assets/Studio Assets/Scenes/EndOfWeek.unity
+    guid: 0c849e24501f5a840a6e7ecbe53f05ba
+  - enabled: 1
+    path: Assets/Studio Assets/Scenes/EndOfDay.unity
+    guid: 565a83268bb332547afeb31753b2b92d
+  - enabled: 1
+    path: Assets/Studio Assets/Scenes/Dan.unity
+    guid: cb0f764ec412dbc40aef2f01718baed7
+  - enabled: 1
+    path: Assets/Studio Assets/Scenes/Bo.unity
+    guid: 7b8167dd11c6ac94ebf12536123327c2
+  - enabled: 1
+    path: Assets/Studio Assets/Scenes/Alain.unity
+    guid: 93af0e678f665394696babecf7bda3ea
   m_configObjects: {}

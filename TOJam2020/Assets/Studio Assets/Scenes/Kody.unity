@@ -203,7 +203,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 367658383}
   m_HandleRect: {fileID: 367658382}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -686,6 +686,9 @@ GameObject:
   - component: {fileID: 632756525}
   - component: {fileID: 632756524}
   - component: {fileID: 632756523}
+  - component: {fileID: 632756526}
+  - component: {fileID: 632756527}
+  - component: {fileID: 632756528}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -741,6 +744,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &632756526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632756522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca052ce2b3ac6af4f948b3d1e7ba0ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 0}
+  dayLengthIRL: 3
+  dayStartTime: 9
+  dayEndTime: 17
+  dayCounter: 0
+  playing: 1
+  cashCalculator: {fileID: 0}
+  singletonEventSystem: {fileID: 0}
+--- !u!114 &632756527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632756522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8be9f98514f76d43b644ec8b6140c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &632756528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632756522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94acdf543c9ddb141a74ffb9d9dcbd0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MAX_NUM_CALLS: 0
+  m_timeBetweenCalls: 0
+  m_possibleWaitTimes: []
+  m_possibleCallLengths: []
 --- !u!1 &833051352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2450803431802257773, guid: 5c9f585d78fea1e45973fa9237df562f,
@@ -1923,6 +1974,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016944531001413834, guid: e50ce4aaac8d7e549929942c21c2f718,
+        type: 3}
+      propertyPath: dayLengthIRL
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016944531001413834, guid: e50ce4aaac8d7e549929942c21c2f718,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e50ce4aaac8d7e549929942c21c2f718, type: 3}
