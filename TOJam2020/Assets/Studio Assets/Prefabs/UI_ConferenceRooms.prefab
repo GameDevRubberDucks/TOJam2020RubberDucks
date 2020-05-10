@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &9032050825435524693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576179458257177422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &9038665266468311157
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +287,21 @@ PrefabInstance:
       propertyPath: m_screenLayouts.Array.data[3]
       value: 
       objectReference: {fileID: 4850487338935618331}
+    - target: {fileID: 5497174661496289742, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -91.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497174661496289742, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20.957954
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782578161302523417, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6141289347150895767, guid: e57c00429dc594d4fb0ca428e307f7e2,
         type: 3}
       propertyPath: m_roomName
@@ -333,6 +363,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea5632caab431949bf794f0e7a7c3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4576179458257177422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3561290449549832312, guid: e57c00429dc594d4fb0ca428e307f7e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1075766794355178294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1515759033007937170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -504,6 +540,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_roomName
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141289347150895767, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_maxCapacity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141289347150895767, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_isActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e57c00429dc594d4fb0ca428e307f7e2, type: 3}
@@ -733,6 +779,16 @@ PrefabInstance:
       propertyPath: m_roomName
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6141289347150895767, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_maxCapacity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141289347150895767, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_isActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e57c00429dc594d4fb0ca428e307f7e2, type: 3}
 --- !u!224 &4529072879362138743 stripped
@@ -961,6 +1017,11 @@ PrefabInstance:
       propertyPath: m_roomName
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6141289347150895767, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_maxCapacity
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e57c00429dc594d4fb0ca428e307f7e2, type: 3}
 --- !u!224 &4401446324392177525 stripped
@@ -1188,6 +1249,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_roomName
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141289347150895767, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_maxCapacity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141289347150895767, guid: e57c00429dc594d4fb0ca428e307f7e2,
+        type: 3}
+      propertyPath: m_isActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e57c00429dc594d4fb0ca428e307f7e2, type: 3}
