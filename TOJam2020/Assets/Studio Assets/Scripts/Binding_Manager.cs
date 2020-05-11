@@ -188,6 +188,11 @@ public class Binding_Manager : MonoBehaviour
 
     public void BindCallerToKey(KeyCode _bindKey, Call_Individual _caller)
     {
+        if (_bindKey == KeyCode.None)
+        {
+            Debug.Log("NONE");
+        }
+
         // Bind the caller to the given key
         m_keyBindings[_bindKey] = _caller;
 
@@ -198,6 +203,10 @@ public class Binding_Manager : MonoBehaviour
 
     public void UnbindKey(KeyCode _bindKey)
     {
+        // If the keycode isn't valid, just back out anyways
+        if (_bindKey == KeyCode.None)
+            return;
+
         // Remove the caller from the bound key
         m_keyBindings[_bindKey] = null;
     }

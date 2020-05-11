@@ -9,16 +9,22 @@ public class Call_Individual_UI : MonoBehaviour
     public TextMeshProUGUI m_txtKeyBind;
     public GameObject m_selectionHighlight;
 
-    [Header("Randomization Controls")]
-    public Image m_imgShirt;
-    public Image m_imgFace;
-    public Image m_imgEyes;
+    [Header("Colour Set A")]
+    public Image m_imgBody;
+    public Image m_imgHead;
+
+    [Header("Colour Set B")]
     public Image m_imgMouth;
+    public Image m_imgNose;
+    public Image m_imgEyes;
+    public Image m_imgBrow;
+    public Image m_imgHair;
 
 
 
     //--- Private Variables ---//
     private Call_Individual m_refCaller;
+    private Caller_Randomization_Manager m_random;
 
 
 
@@ -56,19 +62,53 @@ public class Call_Individual_UI : MonoBehaviour
     public void RandomizeLook()
     {
         // Find the randomization manager so we can pull the sprites from it
-        var randomizationManager = GameObject.FindObjectOfType<Caller_Randomization_Manager>();
+        m_random = GameObject.FindObjectOfType<Caller_Randomization_Manager>();
 
         // Get the caller's unique ID and use it to seed the random so the randomization will always be the same for this caller
         int uniqueID = m_refCaller.ID;
         Random.InitState(uniqueID);
 
-        // Set the different features
-        m_imgShirt.sprite = randomizationManager.RandomShirt;
-        m_imgFace.sprite = randomizationManager.RandomFace;
-        m_imgEyes.sprite = randomizationManager.RandomEyes;
-        m_imgMouth.sprite = randomizationManager.RandomMouth;
+        // Get two random colours so we can colour the different parts of the body
+        Color colourA = m_random.RandomColour;
+        Color colourB = m_random.RandomColour;
+
+        // If the two colours match, continue randomizing until they don't any longer
+        while (colourB == colourA)
+            colourB = m_random.RandomColour;
+
+        // Generate the body features in groups so everything in the group has the same colour
+        GenerateColourGroupA(colourA);
+        GenerateColourGroupB(colourB);
 
         // Re-seed the random to something else now
         Random.InitState((int)Time.time);
+    }
+
+    public void GenerateColourGroupA(Color _colourA)
+    {
+        // Set the body and head
+        m_imgBody.sprite = m_random.RandomBody;
+        m_imgHead.sprite = m_random.RandomHead;
+
+        // Colour the body and head together
+        m_imgBody.color = _colourA;
+        m_imgHead.color = _colourA;
+    }
+
+    public void GenerateColourGroupB(Color _colourB)
+    {
+        // Set the facial features
+        m_imgMouth.sprite = m_random.RandomMouth;
+        m_imgNose.sprite = m_random.RandomNose;
+        m_imgEyes.sprite = m_random.RandomEyes;
+        m_imgBrow.sprite = m_random.RandomBrows;
+        m_imgHair.sprite = m_random.RandomHair;
+
+        // Colour the facial features together
+        m_imgMouth.color = _colourB;
+        m_imgNose.color = _colourB;
+        m_imgEyes.color = _colourB;
+        m_imgBrow.color = _colourB;
+        m_imgHair.color = _colourB;
     }
 }
