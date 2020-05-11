@@ -19,6 +19,24 @@ public class Room : MonoBehaviour
 
 
 
+    //--- Unity Methods ---//
+    private void Awake()
+    {
+        // Pull the capacity from the player prefs if this is a chat room
+        if (m_roomName >= Room_Name.Chat_1 && m_roomName <= Room_Name.Chat_5)
+        {
+            // Grab the capacity from the persistence manager
+            int roomIdx = m_roomName - Room_Name.Chat_1;
+            Persistence_Manager persistence = GameObject.FindObjectOfType<Persistence_Manager>();
+            m_maxCapacity = persistence.m_chatRoomSizes[roomIdx];
+
+            // Enable the room if the capacity is 2 or more
+            m_isActive = m_maxCapacity >= 2;
+        }
+    }
+
+
+
     //--- Methods ---//
     public void ClearCallerList()
     {

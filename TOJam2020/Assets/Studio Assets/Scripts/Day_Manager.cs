@@ -10,7 +10,7 @@ public class Day_Manager : MonoBehaviour
     public TextMeshProUGUI clock;
     //public TextMeshProUGUI dailyEarnings;
     //public TextMeshProUGUI clock;
-    
+
     public float dayLengthIRL = 10.0f;
     private float dayLengthIG = 0.0f;
 
@@ -26,9 +26,11 @@ public class Day_Manager : MonoBehaviour
 
     private string timeString = " ";
 
-    public int dayCounter = 0;
+    private int dayCounter = 0;
+    public int maxDayCounter = 7;
 
     public bool playing = true;
+    public bool shouldCountTime = true;
 
     public GameObject cashCalculator;
 
@@ -37,12 +39,18 @@ public class Day_Manager : MonoBehaviour
     public TextMeshProUGUI txtDayCounter;
 
     public static Day_Manager _instance;
+    private Persistence_Manager persistence;
 
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        persistence = GameObject.FindObjectOfType<Persistence_Manager>();
+        dayCounter = persistence.m_dayNumber;
+    }
+    
     void Start()
     {
-       
         dayLengthIG = dayEndTime - dayStartTime;
         timeElapsed = 0.0f;
         txtDayCounter.text = "Day " + (dayCounter + 1).ToString();
@@ -50,7 +58,7 @@ public class Day_Manager : MonoBehaviour
         if (_instance == null)
         {
             _instance = GameObject.FindObjectOfType<Day_Manager>();
-            
+
             if (_instance != null && _instance != this)
             {
                 Destroy(this.gameObject);
@@ -66,7 +74,7 @@ public class Day_Manager : MonoBehaviour
         cashCalculator = null ?? GameObject.Find("Game_Controller");
 
 
-        
+
 
     }
 
@@ -74,36 +82,39 @@ public class Day_Manager : MonoBehaviour
     void Update()
     {
         //If we want to keep this function this class
+        if (shouldCountTime)
+        {
             timeElapsed = timeElapsed + Time.deltaTime;
+
             //Day end protocol
             if (timeElapsed >= dayLengthIRL)
             {
-            //Call CalculateEndOfDayMoney
-            //dailyEarnings.GetComponent<TextMeshProUGUI>().text = "$ " + this.GetComponent<CashCalculation_Script>().CalculateCashForDay(dayCounter + 1).ToString(); ;
+                //Call CalculateEndOfDayMoney
+                //dailyEarnings.GetComponent<TextMeshProUGUI>().text = "$ " + this.GetComponent<CashCalculation_Script>().CalculateCashForDay(dayCounter + 1).ToString(); ;
 
-                //Incerment Day counter
                 dayCounter++;
 
-                //Reset
-                timeElapsed = 0.0f;
+                if (dayCounter >= maxDayCounter)
+                {
+                    //End week and game
+                    //DontDestroyOnLoad(this.gameObject);
+                    SceneManager.LoadScene("EndOfWeek");
+                }
+                else
+                {
+                    shouldCountTime = false;
 
+                    // save the data out to the persistence manager
+                    persistence.m_dayNumber = dayCounter;
+                    persistence.m_totalMoney = Mathf.RoundToInt(GetComponent<CashCalculation_Script>().TotalCashEarned());
 
-            if (dayCounter == 7)
-            {
-                //End week and game
-                DontDestroyOnLoad(this.gameObject);
-                SceneManager.LoadScene("EndOfWeek");
+                    //End day
+                    //DontDestroyOnLoad(this.gameObject);
+                    SceneManager.LoadScene("EndOfDay");
+                }
             }
-            else
-            {
-
-                //End day
-                DontDestroyOnLoad(this.gameObject);
-                SceneManager.LoadScene("EndOfDay");
-            }
-
-            }
-
+        }
+        
         if (clock)
         {
 
@@ -123,5 +134,18 @@ public class Day_Manager : MonoBehaviour
 
             clock.GetComponent<TextMeshProUGUI>().text = timeString;
         }
+    }
+
+    public void StartNextDay()
+    {
+        //Incerment Day counter
+        dayCounter++;
+
+        //Reset
+        timeElapsed = 0.0f;
+        shouldCountTime = true;
+
+        // Load the main game
+        SceneManager.LoadScene("Main");
     }
 }

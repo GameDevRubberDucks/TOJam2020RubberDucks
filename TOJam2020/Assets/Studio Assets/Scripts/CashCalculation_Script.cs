@@ -21,10 +21,17 @@ public class CashCalculation_Script : MonoBehaviour
 
 
     private float daysEarning = 0.0f;
+    private Persistence_Manager persistence;
 
 
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        persistence = GameObject.FindObjectOfType<Persistence_Manager>();
+        totalCash = persistence.m_totalMoney;
+    }
+
     void Start()
     {
         
