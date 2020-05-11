@@ -81,6 +81,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Key_Animator.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Key_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Keyboard_Layout.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Persistence_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room_HelperStructures.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Room_Manager.cs" />

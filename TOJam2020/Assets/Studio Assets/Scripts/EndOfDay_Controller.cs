@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
 
 public class EndOfDay_Controller : MonoBehaviour
 {
@@ -7,10 +9,13 @@ public class EndOfDay_Controller : MonoBehaviour
     public Room_UI[] m_roomUIObjs;
     public GameObject m_continueUI;
     public GameObject m_upgradeSelectionIndicator;
+    public TextMeshProUGUI m_dayText;
+    public TextMeshProUGUI m_moneyText;
 
 
 
     //--- Private Variables ---//
+    private Persistence_Manager m_persistence;
     private List<Room> m_roomObjs;
     private int m_selectedRoom;
 
@@ -20,10 +25,15 @@ public class EndOfDay_Controller : MonoBehaviour
     private void Awake()
     {
         // Init the private variables
+        m_persistence = GameObject.FindObjectOfType<Persistence_Manager>();
         m_selectedRoom = -1;
         m_roomObjs = new List<Room>();
         foreach (var roomUI in m_roomUIObjs)
             m_roomObjs.Add(roomUI.RoomRef);
+
+        // Set the day and money texts
+        m_dayText.text = "Day " + (m_persistence.m_dayNumber + 1);
+        m_moneyText.text = "$" + m_persistence.m_totalMoney;
     }
 
     private void Update()
@@ -38,8 +48,12 @@ public class EndOfDay_Controller : MonoBehaviour
         // Move to the next day when space is pressed after and upgrade has been selected
         if (m_selectedRoom != -1 && Input.GetKeyDown(KeyCode.Space))
         {
-            // TODO: Move to the next day
-            Debug.Log("Upgrade confirmed");
+            // Save out the room sizes to the persistence manager
+            for (int i = 0; i < m_roomObjs.Count; i++)
+                m_persistence.m_chatRoomSizes[i] = m_roomObjs[i].MaxCapacity;
+            
+            // Move to the next day
+            SceneManager.LoadScene("Main");
         }
 
         // Move the selection indicator over the room that is currently being upgraded
