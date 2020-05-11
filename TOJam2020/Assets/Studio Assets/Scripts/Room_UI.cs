@@ -51,9 +51,15 @@ public class Room_UI : MonoBehaviour
         // Change the label light to disconnected / connected state
         m_screenNumberLabel.sprite = (m_roomRef.IsActive) ? m_screenNumberOn : m_screenNumberOff;
 
-        // Enable the correct screen split layout for room depending on its current size
-        m_activeLayout = m_screenLayouts[m_roomRef.MaxCapacity - 2];
-        m_activeLayout.SetLayoutVisible(true);
+        // Store the active layout
+        if (m_roomRef.IsActive)
+            m_activeLayout = m_screenLayouts[m_roomRef.MaxCapacity - 2];
+        else
+            m_activeLayout = null;
+
+        // Enable the active layout and disable the other layouts
+        foreach(var layout in m_screenLayouts)
+            layout.SetLayoutVisible(layout == m_activeLayout);
 
         // Show the correct room number
         Room_Name roomName = m_roomRef.RoomName;
@@ -66,5 +72,13 @@ public class Room_UI : MonoBehaviour
     {
         // Place the new portraits into the slots, based on the callers in the room
         m_activeLayout.PlacePortraits(m_roomRef.Callers);
+    }
+
+
+
+    //--- Setters and Getters ---//
+    public Room RoomRef
+    {
+        get => m_roomRef;
     }
 }

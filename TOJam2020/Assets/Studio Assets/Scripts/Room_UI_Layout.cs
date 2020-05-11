@@ -59,7 +59,7 @@ public class Room_UI_Layout : MonoBehaviour
     public void SetLayoutVisible(bool _visible)
     {
         // Toggle the layout
-        m_layoutParent.SetActive(true);
+        m_layoutParent.SetActive(_visible);
     }
 
 
