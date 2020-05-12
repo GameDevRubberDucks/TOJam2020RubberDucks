@@ -8,6 +8,7 @@ public class Room : MonoBehaviour
 {
     //--- Public Variables ---//
     [HideInInspector] public UnityEvent m_OnRoomCallersChanged;
+    [HideInInspector] public UnityEvent m_OnRoomDeactivated;
 
 
 
@@ -187,6 +188,9 @@ public class Room : MonoBehaviour
     {
         // Disable the room
         m_isActive = true;
+
+        // Trigger the event
+        m_OnRoomDeactivated.Invoke();
     }
 
 

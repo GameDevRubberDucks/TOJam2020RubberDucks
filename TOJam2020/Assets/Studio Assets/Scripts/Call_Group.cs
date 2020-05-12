@@ -18,6 +18,7 @@ public class Call_Group
     private float m_callTimeMax;
     private float m_callTimeRemaining;
     private bool m_isInBindMode;
+    private bool m_shouldCheckState;
 
 
 
@@ -37,6 +38,7 @@ public class Call_Group
         m_callTimeMax = _callTimeMax;
         m_callTimeRemaining = m_callTimeMax;
         m_isInBindMode = false;
+        m_shouldCheckState = true;
 
         // Create the call participants and keep track of them
         for (int i = 0; i < m_numParticipants; i++)
@@ -48,27 +50,31 @@ public class Call_Group
     //--- Methods ---//
     public void UpdateCall()
     {
-        // Update the current state to see if all the participants are in a chatroom together
-        UpdateCallState();
-
-        // Depending on the state, handle the timer update
-        if (m_callState == Call_State.Waiting)
+        // Should always be checking the state, unless the game is paused or over
+        if (m_shouldCheckState)
         {
-            // Lower the patience meter
-            m_waitTimeRemaining -= Time.deltaTime;
+            // Update the current state to see if all the participants are in a chatroom together
+            UpdateCallState();
 
-            // The callers waited too long and ran out of patience
-            if (m_waitTimeRemaining <= 0.0f)
-                m_OnCallCompleted.Invoke(this, Call_State.Waited_Too_Long);
-        }
-        else if (m_callState == Call_State.Active)
-        {
-            // Lower the call time
-            m_callTimeRemaining -= Time.deltaTime;
+            // Depending on the state, handle the timer update
+            if (m_callState == Call_State.Waiting)
+            {
+                // Lower the patience meter
+                m_waitTimeRemaining -= Time.deltaTime;
 
-            // The callers completed their call successfully
-            if (m_callTimeRemaining <= 0.0f)
-                m_OnCallCompleted.Invoke(this, Call_State.Completed);
+                // The callers waited too long and ran out of patience
+                if (m_waitTimeRemaining <= 0.0f)
+                    m_OnCallCompleted.Invoke(this, Call_State.Waited_Too_Long);
+            }
+            else if (m_callState == Call_State.Active)
+            {
+                // Lower the call time
+                m_callTimeRemaining -= Time.deltaTime;
+
+                // The callers completed their call successfully
+                if (m_callTimeRemaining <= 0.0f)
+                    m_OnCallCompleted.Invoke(this, Call_State.Completed);
+            }
         }
     }
 
@@ -143,5 +149,11 @@ public class Call_Group
     {
         get => m_isInBindMode;
         set => m_isInBindMode = value;
+    }
+
+    public bool ShouldUpdate
+    {
+        get => m_shouldCheckState;
+        set => m_shouldCheckState = value;
     }
 }

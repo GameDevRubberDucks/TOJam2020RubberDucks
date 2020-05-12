@@ -84,6 +84,25 @@ public class Room_Manager : MonoBehaviour
         }
     }
 
+    public void DisconnectAllCallers()
+    {
+        // Loop through all of the rooms and disconnect everyone
+        for (int i = 0; i < m_rooms.Count; i++)
+        {
+            for (int j = 0; j < m_rooms[i].Callers.Count; j++)
+            {
+                m_rooms[i].RemoveCaller(m_rooms[i].Callers[j]);
+                j--;
+            }
+        }
+
+        // Turn off the room display
+        foreach (var room in m_rooms)
+        {
+            room.DeactivateRoom();
+        }
+    }
+
     public int GetCurrentCapacity(Room_Name _roomName)
     {
         // Return the current capacity of the requested room

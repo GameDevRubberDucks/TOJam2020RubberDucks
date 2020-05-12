@@ -26,12 +26,14 @@ public class Room_UI : MonoBehaviour
     {
         // Hook into the room's listener
         m_roomRef.m_OnRoomCallersChanged.AddListener(this.OnRoomUpdated);
+        m_roomRef.m_OnRoomDeactivated.AddListener(this.OnRoomDeactivated);
     }
 
     private void OnDisable()
     {
         // Unhook from the room's listener
         m_roomRef.m_OnRoomCallersChanged.RemoveListener(this.OnRoomUpdated);
+        m_roomRef.m_OnRoomDeactivated.RemoveListener(this.OnRoomDeactivated);
     }
 
     private void Start()
@@ -72,6 +74,13 @@ public class Room_UI : MonoBehaviour
     {
         // Place the new portraits into the slots, based on the callers in the room
         m_activeLayout.PlacePortraits(m_roomRef.Callers);
+    }
+
+    public void OnRoomDeactivated()
+    {
+        // Enable the room off indicators
+        m_disconnectedScreen.SetActive(true);
+        m_screenNumberLabel.sprite = m_screenNumberOff;
     }
 
 
