@@ -84,6 +84,12 @@ public class Room_Manager : MonoBehaviour
         }
     }
 
+    public int GetCurrentCapacity(Room_Name _roomName)
+    {
+        // Return the current capacity of the requested room
+        return m_rooms[(int)_roomName].CurrentCapacity;
+    }
+
 
 
     //--- Getters ---//

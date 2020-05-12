@@ -2262,7 +2262,6 @@ MonoBehaviour:
   dayLengthIRL: 60
   dayStartTime: 9
   dayEndTime: 17
-  dayCounter: 0
   maxDayCounter: 7
   playing: 1
   shouldCountTime: 1

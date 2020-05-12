@@ -9,6 +9,7 @@ public class Call_Group
 
 
     //--- Private Variables ---//
+    private Room_Manager m_roomManager;
     private List<Call_Individual> m_callParticipants;
     private Call_State m_callState;
     private int m_numParticipants;
@@ -27,6 +28,7 @@ public class Call_Group
         m_OnCallCompleted = new Call_CompletionEvent();
 
         // Init the private data
+        m_roomManager = GameObject.FindObjectOfType<Room_Manager>();
         m_callParticipants = new List<Call_Individual>();
         m_callState = Call_State.Waiting;
         m_numParticipants = _numParticipants;
@@ -75,8 +77,15 @@ public class Call_Group
         // Grab the first caller's room so we can see if everyone else is there too
         Room_Name firstCallerRoom = m_callParticipants[0].CurrentRoom;
 
+        // We need to check if it's ONLY this call group in this room. There shouldn't be another group in here
+        if (m_roomManager.GetCurrentCapacity(firstCallerRoom) != m_numParticipants)
+        {
+            m_callState = Call_State.Waiting;
+            return;
+        }
+
         // Check in with the individual callers and see if they are in the same room
-        foreach(var caller in m_callParticipants)
+        foreach (var caller in m_callParticipants)
         {
             // If one of the participants is not in the same room, this call is in a waiting state by default
             if (firstCallerRoom != caller.CurrentRoom)
