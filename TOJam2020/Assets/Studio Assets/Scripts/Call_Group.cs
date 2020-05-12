@@ -9,6 +9,7 @@ public class Call_Group
 
 
     //--- Private Variables ---//
+    private Room_Manager m_roomManager;
     private List<Call_Individual> m_callParticipants;
     private Call_State m_callState;
     private int m_numParticipants;
@@ -17,6 +18,7 @@ public class Call_Group
     private float m_callTimeMax;
     private float m_callTimeRemaining;
     private bool m_isInBindMode;
+    private bool m_shouldCheckState;
 
 
 
@@ -27,6 +29,7 @@ public class Call_Group
         m_OnCallCompleted = new Call_CompletionEvent();
 
         // Init the private data
+        m_roomManager = GameObject.FindObjectOfType<Room_Manager>();
         m_callParticipants = new List<Call_Individual>();
         m_callState = Call_State.Waiting;
         m_numParticipants = _numParticipants;
@@ -35,6 +38,7 @@ public class Call_Group
         m_callTimeMax = _callTimeMax;
         m_callTimeRemaining = m_callTimeMax;
         m_isInBindMode = false;
+        m_shouldCheckState = true;
 
         // Create the call participants and keep track of them
         for (int i = 0; i < m_numParticipants; i++)
@@ -46,27 +50,31 @@ public class Call_Group
     //--- Methods ---//
     public void UpdateCall()
     {
-        // Update the current state to see if all the participants are in a chatroom together
-        UpdateCallState();
-
-        // Depending on the state, handle the timer update
-        if (m_callState == Call_State.Waiting)
+        // Should always be checking the state, unless the game is paused or over
+        if (m_shouldCheckState)
         {
-            // Lower the patience meter
-            m_waitTimeRemaining -= Time.deltaTime;
+            // Update the current state to see if all the participants are in a chatroom together
+            UpdateCallState();
 
-            // The callers waited too long and ran out of patience
-            if (m_waitTimeRemaining <= 0.0f)
-                m_OnCallCompleted.Invoke(this, Call_State.Waited_Too_Long);
-        }
-        else if (m_callState == Call_State.Active)
-        {
-            // Lower the call time
-            m_callTimeRemaining -= Time.deltaTime;
+            // Depending on the state, handle the timer update
+            if (m_callState == Call_State.Waiting)
+            {
+                // Lower the patience meter
+                m_waitTimeRemaining -= Time.deltaTime;
 
-            // The callers completed their call successfully
-            if (m_callTimeRemaining <= 0.0f)
-                m_OnCallCompleted.Invoke(this, Call_State.Completed);
+                // The callers waited too long and ran out of patience
+                if (m_waitTimeRemaining <= 0.0f)
+                    m_OnCallCompleted.Invoke(this, Call_State.Waited_Too_Long);
+            }
+            else if (m_callState == Call_State.Active)
+            {
+                // Lower the call time
+                m_callTimeRemaining -= Time.deltaTime;
+
+                // The callers completed their call successfully
+                if (m_callTimeRemaining <= 0.0f)
+                    m_OnCallCompleted.Invoke(this, Call_State.Completed);
+            }
         }
     }
 
@@ -75,8 +83,15 @@ public class Call_Group
         // Grab the first caller's room so we can see if everyone else is there too
         Room_Name firstCallerRoom = m_callParticipants[0].CurrentRoom;
 
+        // We need to check if it's ONLY this call group in this room. There shouldn't be another group in here
+        if (m_roomManager.GetCurrentCapacity(firstCallerRoom) != m_numParticipants)
+        {
+            m_callState = Call_State.Waiting;
+            return;
+        }
+
         // Check in with the individual callers and see if they are in the same room
-        foreach(var caller in m_callParticipants)
+        foreach (var caller in m_callParticipants)
         {
             // If one of the participants is not in the same room, this call is in a waiting state by default
             if (firstCallerRoom != caller.CurrentRoom)
@@ -134,5 +149,11 @@ public class Call_Group
     {
         get => m_isInBindMode;
         set => m_isInBindMode = value;
+    }
+
+    public bool ShouldUpdate
+    {
+        get => m_shouldCheckState;
+        set => m_shouldCheckState = value;
     }
 }

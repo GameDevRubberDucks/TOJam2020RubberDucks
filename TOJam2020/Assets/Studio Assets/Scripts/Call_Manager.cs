@@ -86,6 +86,13 @@ public class Call_Manager : MonoBehaviour
         m_timeSinceLastCall = 0.0f;
     }
 
+    public void DisableAllCalls()
+    {
+        // Loop through all the calls and tell them to stop updating their states
+        foreach (var call in m_callList)
+            call.ShouldUpdate = false;
+    }
+
 
 
     //--- Event Hooks ---//

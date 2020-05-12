@@ -78,6 +78,9 @@ MonoBehaviour:
   m_OnRoomCallersChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_OnRoomDeactivated:
+    m_PersistentCalls:
+      m_Calls: []
   m_roomName: 0
   m_maxCapacity: 10000
   m_isActive: 1
@@ -94,6 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OnRoomCallersChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnRoomDeactivated:
     m_PersistentCalls:
       m_Calls: []
   m_roomName: 1
@@ -1592,6 +1598,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6031394508889120195}
     m_Modifications:
+    - target: {fileID: 1249803775774388300, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_attachedKey
+      value: 52
+      objectReference: {fileID: 0}
     - target: {fileID: 1980546819376471025, guid: a81926858c2c9744d89b5ebe411ab2c1,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1652,6 +1663,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3818523578521078218, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_attachedKey
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3977088741399823560, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_attachedKey
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4018841656004930957, guid: a81926858c2c9744d89b5ebe411ab2c1,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1712,6 +1733,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4459032086178219568, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_attachedKey
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 4529072879362138743, guid: a81926858c2c9744d89b5ebe411ab2c1,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1741,6 +1767,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961787646031818042, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_roomNumberKey
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961787646031818042, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_screenNumberSelected.r
+      value: 0.33597627
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961787646031818042, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_screenNumberSelected.g
+      value: 0.91400003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961787646031818042, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_screenNumberSelected.b
+      value: 0.31791303
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192443174443467366, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_roomNumberKey
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206120364361813860, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_roomNumberKey
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863245516572033182, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_roomNumberKey
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324550452881405666, guid: a81926858c2c9744d89b5ebe411ab2c1,
+        type: 3}
+      propertyPath: m_roomNumberKey
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 9038665266468311156, guid: a81926858c2c9744d89b5ebe411ab2c1,
         type: 3}
@@ -1854,6 +1920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9032050825435524693, guid: a81926858c2c9744d89b5ebe411ab2c1, type: 3}
+    - {fileID: 8199591920716003059, guid: a81926858c2c9744d89b5ebe411ab2c1, type: 3}
+    - {fileID: 6733821042817564815, guid: a81926858c2c9744d89b5ebe411ab2c1, type: 3}
+    - {fileID: 6315042433862091383, guid: a81926858c2c9744d89b5ebe411ab2c1, type: 3}
+    - {fileID: 6083486199760686965, guid: a81926858c2c9744d89b5ebe411ab2c1, type: 3}
+    - {fileID: 5086741509584547115, guid: a81926858c2c9744d89b5ebe411ab2c1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a81926858c2c9744d89b5ebe411ab2c1, type: 3}
 --- !u!114 &7489661393276993582 stripped
 MonoBehaviour:

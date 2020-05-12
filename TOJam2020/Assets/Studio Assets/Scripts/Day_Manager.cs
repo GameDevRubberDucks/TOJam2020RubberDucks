@@ -37,6 +37,8 @@ public class Day_Manager : MonoBehaviour
     // UI representations
     public Image dayProgressBar;
     public TextMeshProUGUI txtDayCounter;
+    public GameObject txtDayOver;
+    public float dayOverTextLength = 3.0f;
 
     public static Day_Manager _instance;
     private Persistence_Manager persistence;
@@ -97,8 +99,21 @@ public class Day_Manager : MonoBehaviour
                 if (dayCounter >= maxDayCounter)
                 {
                     //End week and game
-                    //DontDestroyOnLoad(this.gameObject);
-                    SceneManager.LoadScene("EndOfWeek");
+
+                    // Show the day over text
+                    txtDayOver.SetActive(true);
+
+                    // Remove all the callers from the rooms
+                    GameObject.FindObjectOfType<Room_Manager>().DisconnectAllCallers();
+
+                    // Stop updating all of the calls
+                    GameObject.FindObjectOfType<Call_Manager>().DisableAllCalls();
+
+                    // Disable input
+                    GameObject.FindObjectOfType<Key_Manager>().enabled = false;
+
+                    //End day
+                    Invoke("MoveToEndWeekScreen", dayOverTextLength);
                 }
                 else
                 {
@@ -108,9 +123,20 @@ public class Day_Manager : MonoBehaviour
                     persistence.m_dayNumber = dayCounter;
                     persistence.m_totalMoney = Mathf.RoundToInt(GetComponent<CashCalculation_Script>().TotalCashEarned());
 
+                    // Show the day over text
+                    txtDayOver.SetActive(true);
+
+                    // Remove all the callers from the rooms
+                    GameObject.FindObjectOfType<Room_Manager>().DisconnectAllCallers();
+
+                    // Stop updating all of the calls
+                    GameObject.FindObjectOfType<Call_Manager>().DisableAllCalls();
+
+                    // Disable input
+                    GameObject.FindObjectOfType<Key_Manager>().enabled = false;
+
                     //End day
-                    //DontDestroyOnLoad(this.gameObject);
-                    SceneManager.LoadScene("EndOfDay");
+                    Invoke("MoveToEndDayScreen", dayOverTextLength);                    
                 }
             }
         }
@@ -147,5 +173,15 @@ public class Day_Manager : MonoBehaviour
 
         // Load the main game
         SceneManager.LoadScene("Main");
+    }
+
+    public void MoveToEndDayScreen()
+    {
+        SceneManager.LoadScene("EndOfDay");
+    }
+
+    public void MoveToEndWeekScreen()
+    {
+        SceneManager.LoadScene("EndOfWeek");
     }
 }
