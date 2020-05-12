@@ -6,7 +6,7 @@ public class Key_Animator : MonoBehaviour
     //--- Private Variables ---//
     private RectTransform m_rectTransform;
     private Shadow m_shadowObject;
-    private KeyCode m_attachedKey;
+    [SerializeField] private KeyCode m_attachedKey;
     private Rect m_baseRect;
     private float m_shadowHeight;
 

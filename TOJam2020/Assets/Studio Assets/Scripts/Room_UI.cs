@@ -9,10 +9,14 @@ public class Room_UI : MonoBehaviour
     public Room_UI_Layout[] m_screenLayouts;
     public GameObject m_callerUIPrefab;
     public Room m_roomRef;
-    public Image m_screenNumberLabel;
-    public Sprite m_screenNumberOn;
-    public Sprite m_screenNumberOff;
-    public TextMeshProUGUI m_screenNumberIndicator;
+
+    [Header("Room Indicator")]
+    public Image m_screenNumberLabelImg;
+    public Color m_screenNumberOff;
+    public Color m_screenNumberOn;
+    public Color m_screenNumberSelected;
+    public TextMeshProUGUI m_screenNumberLabelText;
+    public KeyCode m_roomNumberKey;
 
 
 
@@ -41,7 +45,13 @@ public class Room_UI : MonoBehaviour
         // Configure the room's UI layout
         UpdateRoomDisplay();
     }
-    
+
+    private void Update()
+    {
+        // Update the screen light
+        UpdateScreenLight();
+    }
+
 
 
     //--- Methods ---//
@@ -50,8 +60,8 @@ public class Room_UI : MonoBehaviour
         // Depending on if the room is active, we should show or hide the blocker object
         m_disconnectedScreen.SetActive(!m_roomRef.IsActive);
 
-        // Change the label light to disconnected / connected state
-        m_screenNumberLabel.sprite = (m_roomRef.IsActive) ? m_screenNumberOn : m_screenNumberOff;
+        // Set the number light to the correct colour
+        UpdateScreenLight();
 
         // Store the active layout
         if (m_roomRef.IsActive)
@@ -67,7 +77,7 @@ public class Room_UI : MonoBehaviour
         Room_Name roomName = m_roomRef.RoomName;
         string roomNameStr = roomName.ToString();
         string roomNumberStr = roomNameStr.Substring(roomNameStr.Length - 1, 1);
-        m_screenNumberIndicator.text = roomNumberStr;
+        m_screenNumberLabelText.text = roomNumberStr;
     }
 
     public void OnRoomUpdated()
@@ -80,7 +90,17 @@ public class Room_UI : MonoBehaviour
     {
         // Enable the room off indicators
         m_disconnectedScreen.SetActive(true);
-        m_screenNumberLabel.sprite = m_screenNumberOff;
+        m_screenNumberLabelImg.color = m_screenNumberOff;
+    }
+
+    public void UpdateScreenLight()
+    {
+        // If the room is deactivated, use that colour
+        // Otherwise, switch between the on and selected colours
+        if (!m_roomRef.IsActive)
+            m_screenNumberLabelImg.color = m_screenNumberOff;
+        else
+            m_screenNumberLabelImg.color = (Input.GetKey(m_roomNumberKey)) ? m_screenNumberSelected : m_screenNumberOn;
     }
 
 

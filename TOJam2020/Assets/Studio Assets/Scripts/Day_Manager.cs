@@ -99,8 +99,21 @@ public class Day_Manager : MonoBehaviour
                 if (dayCounter >= maxDayCounter)
                 {
                     //End week and game
-                    //DontDestroyOnLoad(this.gameObject);
-                    SceneManager.LoadScene("EndOfWeek");
+
+                    // Show the day over text
+                    txtDayOver.SetActive(true);
+
+                    // Remove all the callers from the rooms
+                    GameObject.FindObjectOfType<Room_Manager>().DisconnectAllCallers();
+
+                    // Stop updating all of the calls
+                    GameObject.FindObjectOfType<Call_Manager>().DisableAllCalls();
+
+                    // Disable input
+                    GameObject.FindObjectOfType<Key_Manager>().enabled = false;
+
+                    //End day
+                    Invoke("MoveToEndWeekScreen", dayOverTextLength);
                 }
                 else
                 {
@@ -165,5 +178,10 @@ public class Day_Manager : MonoBehaviour
     public void MoveToEndDayScreen()
     {
         SceneManager.LoadScene("EndOfDay");
+    }
+
+    public void MoveToEndWeekScreen()
+    {
+        SceneManager.LoadScene("EndOfWeek");
     }
 }
