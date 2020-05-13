@@ -243,6 +243,10 @@ public class Binding_Manager : MonoBehaviour
             if (m_groupToBind != null)
                 m_groupToBind.IsInBindMode = false;
 
+            // If a different group was selected previously, we should clear the selection
+            if (m_groupToBind != value)
+                DeselectAll();
+
             // If the new binding group is aleady fully bound, back out
             bool fullyBound = true;
             for (int i = 0; i < value.CallParticipants.Count; i++)
