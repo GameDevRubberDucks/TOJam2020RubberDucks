@@ -20,6 +20,10 @@ public class Call_Group
     private bool m_isInBindMode;
     private bool m_shouldCheckState;
 
+    //--- Audio Variabls ---//
+    private Audio_Manager audioManager = null;
+    private Call_State prevState;
+
 
 
     //--- Constructors ---//
@@ -104,9 +108,23 @@ public class Call_Group
         // If all of the callers are in the same room, we still need to determine if they are actually in a chat room
         // If they are not in a chat room but they are all together, they are still waiting
         if (firstCallerRoom >= Room_Name.Chat_1 && firstCallerRoom <= Room_Name.Chat_5)
+        { 
             m_callState = Call_State.Active;
+            if (prevState == Call_State.Waiting)
+            {
+                if (audioManager == null)
+                { 
+                    audioManager = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
+                }
+                audioManager.PlayOneShot(2,1.0f);
+            }
+            prevState = m_callState;
+        }
         else
+        {
             m_callState = Call_State.Waiting;
+            prevState = m_callState;
+        }
     }
 
 
