@@ -128,6 +128,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
+      propertyPath: m_timeBetweenCalls
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
+      propertyPath: m_possibleWaitTimes.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
+      propertyPath: m_possibleWaitTimes.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
+      propertyPath: m_possibleWaitTimes.Array.data[2]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
+      propertyPath: m_possibleWaitTimes.Array.data[3]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
+      propertyPath: m_possibleCallLengths.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
+      propertyPath: m_possibleCallLengths.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
+      propertyPath: m_possibleCallLengths.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
+      propertyPath: m_possibleCallLengths.Array.data[3]
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 143520263872127477, guid: 1adc08e74bce68c4dab561ef35a62a56,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1801,7 +1837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -90.6, y: 0}
+  m_AnchoredPosition: {x: -90.6001, y: 0}
   m_SizeDelta: {x: -181.10828, y: 176.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619644406
