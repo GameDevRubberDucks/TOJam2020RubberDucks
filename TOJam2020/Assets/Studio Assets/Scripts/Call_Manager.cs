@@ -10,6 +10,7 @@ public class Call_Manager : MonoBehaviour
     public float m_timeBetweenCalls;
     public float[] m_possibleWaitTimes;
     public float[] m_possibleCallLengths;
+    public TextMeshProUGUI totalCash;
 
 
 
@@ -22,10 +23,9 @@ public class Call_Manager : MonoBehaviour
     private List<float> cashFromCall;
     private int callsCompletedTotal; // In case we want career how many calls they have completed
     private int callsCompletedDaily; //How many calls completed in the day
-    public TextMeshProUGUI totalCash;
-    //public TextMeshProUGUI callCash;
 
-
+    //--- Audio Variables ---//
+    private Audio_Manager audioManager;
     //--- Unity Methods ---//
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class Call_Manager : MonoBehaviour
         m_callList = new List<Call_Group>();
         m_timeSinceLastCall = m_timeBetweenCalls;
         totalCash = GameObject.Find("Txt_Money").GetComponent<TextMeshProUGUI>();
-        //callCash = GameObject.Find("Call Cash").GetComponent<TextMeshProUGUI>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
     }
 
     private void Update()
@@ -102,11 +102,12 @@ public class Call_Manager : MonoBehaviour
         if (_callFinalState == Call_State.Waited_Too_Long)
         {
             // TODO: Play negative feedback
+
         }
         else if (_callFinalState == Call_State.Completed)
         {
             // TODO: Play positive feedback
-
+            audioManager.PlayOneShot(3, 0.5f) ;
             // Add points, reputation, etc
             callsCompletedDaily++;
             GameObject.FindObjectOfType<CashCalculation_Script>().CalculateCashForCall(_callObj);

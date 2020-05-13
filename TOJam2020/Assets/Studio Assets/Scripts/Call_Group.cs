@@ -116,7 +116,7 @@ public class Call_Group
                 { 
                     audioManager = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
                 }
-                audioManager.PlayOneShot(2,1.0f);
+                audioManager.PlayOneShot(2,0.5f);
             }
             prevState = m_callState;
         }
