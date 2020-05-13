@@ -8,6 +8,7 @@ public class Call_Individual_UI : MonoBehaviour
     [Header("Main Controls")]
     public TextMeshProUGUI m_txtKeyBind;
     public GameObject m_selectionHighlight;
+    public Animator m_animator;
 
     [Header("Colour Set A")]
     public Image m_imgBody;
@@ -79,6 +80,20 @@ public class Call_Individual_UI : MonoBehaviour
         // Generate the body features in groups so everything in the group has the same colour
         GenerateColourGroupA(colourA);
         GenerateColourGroupB(colourB);
+
+        // Configure the animator if in a chat room, otherwise, don't animate at all
+        if (GetComponentInParent<Key_Animator>() != null)
+        {
+            // If on the keyboard, don't animate at all
+            m_animator.enabled = false;
+        }
+        else
+        {
+            // If in the call, animate with a random offset and a random speed
+            float animatorOffset = Random.value;
+            m_animator.SetFloat("Offset", animatorOffset);
+            m_animator.speed = Random.value;
+        }
 
         // Re-seed the random to something else now
         Random.InitState((int)Time.time);
