@@ -220,6 +220,17 @@ public class Binding_Manager : MonoBehaviour
         foreach (var caller in callers)
             UnbindKey(caller.BoundKeyCode);
 
+        // If the call group was the one that was bound, we should unbind it
+        if (_group == m_groupToBind)
+            m_groupToBind = null;
+
+        // If any of the callers was in the selection, we should remove that as well
+        foreach(var caller in callers)
+        {
+            if (m_selectedCallers.Contains(caller))
+                DeselectCaller(caller);
+        }
+
         // Invoke the event since the key bindings have changed
         m_OnBindingsChanged.Invoke();
 
@@ -242,6 +253,10 @@ public class Binding_Manager : MonoBehaviour
             // If there was a group previously set, turn it off
             if (m_groupToBind != null)
                 m_groupToBind.IsInBindMode = false;
+
+            // If a different group was selected previously, we should clear the selection
+            if (m_groupToBind != value)
+                DeselectAll();
 
             // If the new binding group is aleady fully bound, back out
             bool fullyBound = true;
