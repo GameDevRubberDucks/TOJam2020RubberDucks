@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
 public class Key_Animator : MonoBehaviour
 {
     //--- Private Variables ---//
@@ -9,7 +8,7 @@ public class Key_Animator : MonoBehaviour
     private KeyCode m_attachedKey;
     private Rect m_baseRect;
     private float m_shadowHeight;
-
+    public Audio_Manager keyAudio;
 
 
     //--- Unity Methods ---//
@@ -20,6 +19,7 @@ public class Key_Animator : MonoBehaviour
         m_rectTransform = this.GetComponent<RectTransform>();
         m_baseRect = m_rectTransform.rect;
         m_shadowHeight = m_shadowObject.effectDistance.y;
+        keyAudio = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
     }
 
     private void Update()
@@ -32,6 +32,10 @@ public class Key_Animator : MonoBehaviour
 
             // Lower the key visualization by the same amount as the shadow was previously
             m_rectTransform.anchoredPosition = m_baseRect.position + new Vector2(0.0f, m_shadowHeight);
+
+            //Play Audio
+            keyAudio.PlayOneShot(0,1.0f);
+            
         }
         else if (Input.GetKeyUp(m_attachedKey))
         {
@@ -40,6 +44,9 @@ public class Key_Animator : MonoBehaviour
 
             // Move the key visuals back
             m_rectTransform.anchoredPosition = m_baseRect.position;
+
+            //play Audio
+            keyAudio.PlayOneShot(1,1.0f);
         }
     }
 
