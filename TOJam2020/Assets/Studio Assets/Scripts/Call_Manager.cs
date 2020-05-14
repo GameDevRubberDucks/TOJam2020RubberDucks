@@ -102,6 +102,7 @@ public class Call_Manager : MonoBehaviour
         if (_callFinalState == Call_State.Waited_Too_Long)
         {
             // TODO: Play negative feedback
+            audioManager.PlayOneShot(4, 0.1f);
 
         }
         else if (_callFinalState == Call_State.Completed)
