@@ -203,19 +203,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
       propertyPath: m_possibleWaitTimes.Array.data[0]
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
       propertyPath: m_possibleWaitTimes.Array.data[1]
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
       propertyPath: m_possibleWaitTimes.Array.data[2]
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
       propertyPath: m_possibleWaitTimes.Array.data[3]
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1922898736, guid: 1adc08e74bce68c4dab561ef35a62a56, type: 3}
       propertyPath: m_possibleCallLengths.Array.data[0]
