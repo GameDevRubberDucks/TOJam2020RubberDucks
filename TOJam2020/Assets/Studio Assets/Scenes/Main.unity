@@ -2520,7 +2520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clock: {fileID: 1259568867}
-  dayLengthIRL: 10
+  dayLengthIRL: 60
   dayStartTime: 9
   dayEndTime: 17
   maxDayCounter: 7
