@@ -23,6 +23,7 @@ public class Call_Manager : MonoBehaviour
     private List<float> cashFromCall;
     private int callsCompletedTotal; // In case we want career how many calls they have completed
     private int callsCompletedDaily; //How many calls completed in the day
+    private bool m_shouldGenerateCalls;
 
 
 
@@ -40,11 +41,12 @@ public class Call_Manager : MonoBehaviour
         m_callList = new List<Call_Group>();
         totalCash = GameObject.Find("Txt_Money").GetComponent<TextMeshProUGUI>();
         audioManager = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
+        m_shouldGenerateCalls = true;
 
         // Sample the difficulty curve to determine how quickly calls should spawn throughout this day
         Persistence_Manager persistence = GameObject.FindObjectOfType<Persistence_Manager>();
         Day_Manager dayManager = GameObject.FindObjectOfType<Day_Manager>();
-        float percentThroughWeek = (float)persistence.m_dayNumber / (float)dayManager.maxDayCounter;
+        float percentThroughWeek = (float)persistence.m_dayNumber / (float)(dayManager.maxDayCounter - 1);
         m_timeBetweenCalls = m_timeBetweenCallsCurve.Evaluate(percentThroughWeek);
         m_timeSinceLastCall = m_timeBetweenCalls;
         Debug.Log("Time Between Calls: " + m_timeBetweenCalls);
@@ -53,7 +55,7 @@ public class Call_Manager : MonoBehaviour
     private void Update()
     {
         // Only try to generate new calls if there is still space to do so
-        if (m_callList.Count < m_MAX_NUM_CALLS)
+        if (m_shouldGenerateCalls && m_callList.Count < m_MAX_NUM_CALLS)
         {
             // Count up since the last call
             m_timeSinceLastCall += Time.deltaTime;
@@ -103,6 +105,9 @@ public class Call_Manager : MonoBehaviour
         // Loop through all the calls and tell them to stop updating their states
         foreach (var call in m_callList)
             call.ShouldUpdate = false;
+
+        // Should not generate any calls either
+        m_shouldGenerateCalls = false;
     }
 
 
