@@ -36,6 +36,8 @@ public class Day_Manager : MonoBehaviour
 
     // UI representations
     public Image dayProgressBar;
+    public Color dayProgressMed;
+    public Color dayProgressHigh;
     public TextMeshProUGUI txtDayCounter;
     public GameObject txtDayStart;
     public GameObject txtDayOver;
@@ -156,6 +158,11 @@ public class Day_Manager : MonoBehaviour
             timeElapsedLERP = timeElapsed / dayLengthIRL; // This is the percent of the day that has gone by
             dayProgressBar.fillAmount = timeElapsedLERP;
 
+            if (timeElapsedLERP > 0.9f)
+                dayProgressBar.color = dayProgressHigh;
+            else if (timeElapsedLERP > 0.7f)
+                dayProgressBar.color = dayProgressMed;
+            
             dayLengthIG = (dayEndTime * 60.0f) - (dayStartTime * 60.0f);
 
             timeElapsedIGLERP = Mathf.Lerp((dayStartTime * 60.0f), (dayEndTime * 60.0f), timeElapsedLERP);

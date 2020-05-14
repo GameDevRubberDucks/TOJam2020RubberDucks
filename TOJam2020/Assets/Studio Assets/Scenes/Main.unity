@@ -2492,6 +2492,8 @@ MonoBehaviour:
   shouldCountTime: 1
   cashCalculator: {fileID: 237241235}
   dayProgressBar: {fileID: 605287089}
+  dayProgressMed: {r: 0.6627451, g: 0.61960787, b: 0.23137254, a: 1}
+  dayProgressHigh: {r: 0.6627451, g: 0.23137257, b: 0.23137257, a: 1}
   txtDayCounter: {fileID: 730856099}
   txtDayStart: {fileID: 1792414877}
   txtDayOver: {fileID: 619644404}
