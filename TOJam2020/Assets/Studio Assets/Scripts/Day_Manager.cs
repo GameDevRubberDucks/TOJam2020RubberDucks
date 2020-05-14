@@ -37,8 +37,9 @@ public class Day_Manager : MonoBehaviour
     // UI representations
     public Image dayProgressBar;
     public TextMeshProUGUI txtDayCounter;
+    public GameObject txtDayStart;
     public GameObject txtDayOver;
-    public float dayOverTextLength = 3.0f;
+    public float dayBufferLength = 3.0f;
 
     public static Day_Manager _instance;
     private Persistence_Manager persistence;
@@ -75,9 +76,17 @@ public class Day_Manager : MonoBehaviour
         //dailyEarnings = null ?? GameObject.Find("Daily Earning").GetComponent<TextMeshProUGUI>();
         cashCalculator = null ?? GameObject.Find("Game_Controller");
 
+        // Shouldn't start counting time until the day begins properly
+        shouldCountTime = false;
 
+        // Should prevent key input until the day starts
+        GameObject.FindObjectOfType<Key_Manager>().enabled = false;
 
+        // Show the day start text
+        txtDayStart.SetActive(true);
 
+        // Turn off the day start text after a few seconds and then begin the day properly
+        Invoke("StartDay", dayBufferLength);
     }
 
     // Update is called once per frame
@@ -107,13 +116,13 @@ public class Day_Manager : MonoBehaviour
                     GameObject.FindObjectOfType<Room_Manager>().DisconnectAllCallers();
 
                     // Stop updating all of the calls
-                    GameObject.FindObjectOfType<Call_Manager>().DisableAllCalls();
+                    GameObject.FindObjectOfType<Call_Manager>().IsActive = false;
 
                     // Disable input
                     GameObject.FindObjectOfType<Key_Manager>().enabled = false;
 
                     //End day
-                    Invoke("MoveToEndWeekScreen", dayOverTextLength);
+                    Invoke("MoveToEndWeekScreen", dayBufferLength);
                 }
                 else
                 {
@@ -130,13 +139,13 @@ public class Day_Manager : MonoBehaviour
                     GameObject.FindObjectOfType<Room_Manager>().DisconnectAllCallers();
 
                     // Stop updating all of the calls
-                    GameObject.FindObjectOfType<Call_Manager>().DisableAllCalls();
+                    GameObject.FindObjectOfType<Call_Manager>().IsActive = false;
 
                     // Disable input
                     GameObject.FindObjectOfType<Key_Manager>().enabled = false;
 
                     //End day
-                    Invoke("MoveToEndDayScreen", dayOverTextLength);                    
+                    Invoke("MoveToEndDayScreen", dayBufferLength);                    
                 }
             }
         }
@@ -173,6 +182,21 @@ public class Day_Manager : MonoBehaviour
 
         // Load the main game
         SceneManager.LoadScene("Main");
+    }
+
+    public void StartDay()
+    {
+        // Hide the day start text
+        txtDayStart.SetActive(false);
+
+        // Tell the call manager to start working
+        GameObject.FindObjectOfType<Call_Manager>().IsActive = true;
+
+        // Allow keyboard input
+        GameObject.FindObjectOfType<Key_Manager>().enabled = true;
+
+        // Should start counting time now
+        shouldCountTime = true;
     }
 
     public void MoveToEndDayScreen()

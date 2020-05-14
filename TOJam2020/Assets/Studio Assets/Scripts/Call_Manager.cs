@@ -23,7 +23,7 @@ public class Call_Manager : MonoBehaviour
     private List<float> cashFromCall;
     private int callsCompletedTotal; // In case we want career how many calls they have completed
     private int callsCompletedDaily; //How many calls completed in the day
-    private bool m_shouldGenerateCalls;
+    private bool m_active;
 
 
 
@@ -41,7 +41,7 @@ public class Call_Manager : MonoBehaviour
         m_callList = new List<Call_Group>();
         totalCash = GameObject.Find("Txt_Money").GetComponent<TextMeshProUGUI>();
         audioManager = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
-        m_shouldGenerateCalls = true;
+        m_active = false;
 
         // Sample the difficulty curve to determine how quickly calls should spawn throughout this day
         Persistence_Manager persistence = GameObject.FindObjectOfType<Persistence_Manager>();
@@ -54,20 +54,24 @@ public class Call_Manager : MonoBehaviour
 
     private void Update()
     {
-        // Only try to generate new calls if there is still space to do so
-        if (m_shouldGenerateCalls && m_callList.Count < m_MAX_NUM_CALLS)
+        // Only try to generate things if it should be active
+        if(m_active)
         {
-            // Count up since the last call
-            m_timeSinceLastCall += Time.deltaTime;
+            // Only try to generate new calls if there is still space to do so
+            if (m_callList.Count < m_MAX_NUM_CALLS)
+            {
+                // Count up since the last call
+                m_timeSinceLastCall += Time.deltaTime;
 
-            // If enough time has passed, generate a new call
-            if (m_timeSinceLastCall >= m_timeBetweenCalls)
-                GenerateCall();
+                // If enough time has passed, generate a new call
+                if (m_timeSinceLastCall >= m_timeBetweenCalls)
+                    GenerateCall();
+            }
+
+            // Update all of the calls
+            foreach (var call in m_callList)
+                call.UpdateCall();
         }
-
-        // Update all of the calls
-        foreach (var call in m_callList)
-            call.UpdateCall();
     }
 
 
@@ -98,16 +102,6 @@ public class Call_Manager : MonoBehaviour
 
         // Reset the timer
         m_timeSinceLastCall = 0.0f;
-    }
-
-    public void DisableAllCalls()
-    {
-        // Loop through all the calls and tell them to stop updating their states
-        foreach (var call in m_callList)
-            call.ShouldUpdate = false;
-
-        // Should not generate any calls either
-        m_shouldGenerateCalls = false;
     }
 
 
@@ -157,5 +151,13 @@ public class Call_Manager : MonoBehaviour
 
         // Remove the caller from the list
         m_callList.Remove(_callObj);
+    }
+
+
+
+    //--- Setters and Getters ---//
+    public bool IsActive
+    {
+        set => m_active = value;
     }
 }
