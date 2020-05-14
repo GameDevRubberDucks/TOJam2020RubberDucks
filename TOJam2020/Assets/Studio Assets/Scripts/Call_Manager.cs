@@ -7,7 +7,7 @@ public class Call_Manager : MonoBehaviour
 {
     //--- Public Variables ---//
     public int m_MAX_NUM_CALLS;
-    public float m_timeBetweenCalls;
+    public AnimationCurve m_timeBetweenCallsCurve;
     public float[] m_possibleWaitTimes;
     public float[] m_possibleCallLengths;
     public TextMeshProUGUI totalCash;
@@ -19,13 +19,18 @@ public class Call_Manager : MonoBehaviour
     private CallerLog_UIManager m_callLogUI;
     private List<Call_Group> m_callList;
     private float m_timeSinceLastCall;
-
+    private float m_timeBetweenCalls;
     private List<float> cashFromCall;
     private int callsCompletedTotal; // In case we want career how many calls they have completed
     private int callsCompletedDaily; //How many calls completed in the day
 
+
+
     //--- Audio Variables ---//
     private Audio_Manager audioManager;
+
+
+
     //--- Unity Methods ---//
     private void Awake()
     {
@@ -33,9 +38,16 @@ public class Call_Manager : MonoBehaviour
         m_roomManager = GameObject.FindObjectOfType<Room_Manager>();
         m_callLogUI = GameObject.FindObjectOfType<CallerLog_UIManager>();
         m_callList = new List<Call_Group>();
-        m_timeSinceLastCall = m_timeBetweenCalls;
         totalCash = GameObject.Find("Txt_Money").GetComponent<TextMeshProUGUI>();
         audioManager = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
+
+        // Sample the difficulty curve to determine how quickly calls should spawn throughout this day
+        Persistence_Manager persistence = GameObject.FindObjectOfType<Persistence_Manager>();
+        Day_Manager dayManager = GameObject.FindObjectOfType<Day_Manager>();
+        float percentThroughWeek = (float)persistence.m_dayNumber / (float)dayManager.maxDayCounter;
+        m_timeBetweenCalls = m_timeBetweenCallsCurve.Evaluate(percentThroughWeek);
+        m_timeSinceLastCall = m_timeBetweenCalls;
+        Debug.Log("Time Between Calls: " + m_timeBetweenCalls);
     }
 
     private void Update()

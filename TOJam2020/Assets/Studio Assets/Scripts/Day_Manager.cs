@@ -184,4 +184,9 @@ public class Day_Manager : MonoBehaviour
     {
         SceneManager.LoadScene("EndOfWeek");
     }
+
+    public int CurrentDay
+    {
+        get => dayCounter;
+    }
 }
