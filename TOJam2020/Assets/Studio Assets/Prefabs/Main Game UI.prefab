@@ -548,12 +548,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MAX_NUM_CALLS: 8
-  m_timeBetweenCalls: 2.5
+  m_timeBetweenCallsCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 8
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   m_possibleWaitTimes:
-  - 5
-  - 5
-  - 5
-  - 5
+  - 30
+  - 30
+  - 30
+  - 30
   m_possibleCallLengths:
   - 2
   - 4
@@ -5680,7 +5703,7 @@ PrefabInstance:
     - target: {fileID: 1640080908362983592, guid: 1bb7d929913c3a1448adeb0fd3063487,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 242.03177
+      value: 242.03174
       objectReference: {fileID: 0}
     - target: {fileID: 1640080908362983595, guid: 1bb7d929913c3a1448adeb0fd3063487,
         type: 3}

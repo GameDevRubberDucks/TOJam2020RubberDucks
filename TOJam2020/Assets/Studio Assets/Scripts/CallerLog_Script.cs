@@ -7,8 +7,7 @@ public class CallerLog_Script : MonoBehaviour
 {
     //--- Global Variable ---//
     //UI Variables
-    public Image callerCountIcon;
-    public Sprite[] callerCountImages;
+    public TextMeshProUGUI callerCountText;
     public TextMeshProUGUI callDuration;
     public Image timerBar;
     public Image timerClock;
@@ -49,7 +48,7 @@ public class CallerLog_Script : MonoBehaviour
         callTimeMax = refGroup.GetCallTimeMax();
         callTimeRemaining = refGroup.GetCallTimeRemaining();
 
-        callerCountIcon.sprite = callerCountImages[refGroup.GetNumParticipants() - 2];
+        callerCountText.text = refGroup.GetNumParticipants().ToString();
         callDuration.GetComponent<TextMeshProUGUI>().text = callTimeMax.ToString();
 
     }

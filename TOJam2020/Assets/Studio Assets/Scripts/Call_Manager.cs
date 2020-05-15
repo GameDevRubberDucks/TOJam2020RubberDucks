@@ -7,7 +7,7 @@ public class Call_Manager : MonoBehaviour
 {
     //--- Public Variables ---//
     public int m_MAX_NUM_CALLS;
-    public float m_timeBetweenCalls;
+    public AnimationCurve m_timeBetweenCallsCurve;
     public float[] m_possibleWaitTimes;
     public float[] m_possibleCallLengths;
     public TextMeshProUGUI totalCash;
@@ -18,15 +18,19 @@ public class Call_Manager : MonoBehaviour
     private Room_Manager m_roomManager;
     private CallerLog_UIManager m_callLogUI;
     private List<Call_Group> m_callList;
-    private float m_timeSinceLastCall;
-
+    private float m_timeSinceLastCall;
+    private float m_timeBetweenCalls;
     private List<float> cashFromCall;
     private int callsCompletedTotal; // In case we want career how many calls they have completed
-    private int callsCompletedDaily; //How many calls completed in the day
-
-    private Persistence_Manager persistManager;
-    //--- Audio Variables ---//
+    private int callsCompletedDaily; //How many calls completed in the day
+    private bool m_active;
+
+    private Persistence_Manager persistManager;
+    //--- Audio Variables ---//
     private Audio_Manager audioManager;
+
+
+
     //--- Unity Methods ---//
     private void Awake()
     {
@@ -34,28 +38,40 @@ public class Call_Manager : MonoBehaviour
         m_roomManager = GameObject.FindObjectOfType<Room_Manager>();
         m_callLogUI = GameObject.FindObjectOfType<CallerLog_UIManager>();
         m_callList = new List<Call_Group>();
-        m_timeSinceLastCall = m_timeBetweenCalls;
         totalCash = GameObject.Find("Txt_Money").GetComponent<TextMeshProUGUI>();
         audioManager = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
         persistManager = GameObject.Find("PersistenceManager").GetComponent<Persistence_Manager>();
+        m_active = false;
+
+        // Sample the difficulty curve to determine how quickly calls should spawn throughout this day
+        Persistence_Manager persistence = GameObject.FindObjectOfType<Persistence_Manager>();
+        Day_Manager dayManager = GameObject.FindObjectOfType<Day_Manager>();
+        float percentThroughWeek = (float)persistence.m_dayNumber / (float)(dayManager.maxDayCounter - 1);
+        m_timeBetweenCalls = m_timeBetweenCallsCurve.Evaluate(percentThroughWeek);
+        m_timeSinceLastCall = m_timeBetweenCalls;
+        Debug.Log("Time Between Calls: " + m_timeBetweenCalls);
     }
 
     private void Update()
     {
-        // Only try to generate new calls if there is still space to do so
-        if (m_callList.Count < m_MAX_NUM_CALLS)
-        {
-            // Count up since the last call
-            m_timeSinceLastCall += Time.deltaTime;
-
-            // If enough time has passed, generate a new call
-            if (m_timeSinceLastCall >= m_timeBetweenCalls)
-                GenerateCall();
+        // Only try to generate things if it should be active
+        if(m_active)
+        {
+            // Only try to generate new calls if there is still space to do so
+            if (m_callList.Count < m_MAX_NUM_CALLS)
+            {
+                // Count up since the last call
+                m_timeSinceLastCall += Time.deltaTime;
+
+                // If enough time has passed, generate a new call
+                if (m_timeSinceLastCall >= m_timeBetweenCalls)
+                    GenerateCall();
+            }
+
+            // Update all of the calls
+            foreach (var call in m_callList)
+                call.UpdateCall();
         }
-
-        // Update all of the calls
-        foreach (var call in m_callList)
-            call.UpdateCall();
     }
 
 
@@ -86,13 +102,6 @@ public class Call_Manager : MonoBehaviour
 
         // Reset the timer
         m_timeSinceLastCall = 0.0f;
-    }
-
-    public void DisableAllCalls()
-    {
-        // Loop through all the calls and tell them to stop updating their states
-        foreach (var call in m_callList)
-            call.ShouldUpdate = false;
     }
 
 
@@ -150,5 +159,13 @@ public class Call_Manager : MonoBehaviour
 
         // Remove the caller from the list
         m_callList.Remove(_callObj);
+    }
+
+
+
+    //--- Setters and Getters ---//
+    public bool IsActive
+    {
+        set => m_active = value;
     }
 }
