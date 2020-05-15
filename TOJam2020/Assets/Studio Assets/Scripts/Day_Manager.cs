@@ -41,6 +41,7 @@ public class Day_Manager : MonoBehaviour
     public TextMeshProUGUI txtDayCounter;
     public GameObject txtDayStart;
     public GameObject txtDayOver;
+    public GameObject txtBackground;
     public float dayBufferLength = 3.0f;
 
     public static Day_Manager _instance;
@@ -90,6 +91,7 @@ public class Day_Manager : MonoBehaviour
 
         // Show the day start text
         txtDayStart.SetActive(true);
+        txtBackground.SetActive(true);
 
         // Turn off the day start text after a few seconds and then begin the day properly
         Invoke("StartDay", dayBufferLength);
@@ -117,6 +119,7 @@ public class Day_Manager : MonoBehaviour
 
                     // Show the day over text
                     txtDayOver.SetActive(true);
+                    txtBackground.SetActive(true);
 
                     // Remove all the callers from the rooms
                     GameObject.FindObjectOfType<Room_Manager>().DisconnectAllCallers();
@@ -143,6 +146,7 @@ public class Day_Manager : MonoBehaviour
 
                     // Show the day over text
                     txtDayOver.SetActive(true);
+                    txtBackground.SetActive(true);
 
                     // Remove all the callers from the rooms
                     GameObject.FindObjectOfType<Room_Manager>().DisconnectAllCallers();
@@ -202,6 +206,7 @@ public class Day_Manager : MonoBehaviour
     {
         // Hide the day start text
         txtDayStart.SetActive(false);
+        txtBackground.SetActive(false);
 
         // Tell the call manager to start working
         GameObject.FindObjectOfType<Call_Manager>().IsActive = true;
