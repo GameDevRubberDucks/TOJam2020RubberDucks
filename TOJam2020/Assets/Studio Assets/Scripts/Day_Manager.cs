@@ -124,7 +124,7 @@ public class Day_Manager : MonoBehaviour
                     shouldCountTime = false;
 
                     //Play dayEnd Audio
-                    audioManager.PlayOneShot(5,0.1f);
+                    audioManager.PlayOneShot(5,0.5f);
 
                     // save the data out to the persistence manager
                     persistence.m_dayNumber = dayCounter;

@@ -8,7 +8,7 @@ public class Key_Animator : MonoBehaviour
     [SerializeField] private KeyCode m_attachedKey;
     private Rect m_baseRect;
     private float m_shadowHeight;
-    public Audio_Manager keyAudio;
+    private Audio_Manager keyAudio;
 
 
     //--- Unity Methods ---//

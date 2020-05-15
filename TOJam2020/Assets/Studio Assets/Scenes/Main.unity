@@ -2329,6 +2329,9 @@ MonoBehaviour:
   m_chatRoomSizes: 0300000002000000010000000100000001000000
   m_totalMoney: 0
   m_dayNumber: 0
+  callsMissed: 0
+  callsCompleted: 0
+  gamesSatisfaction: 0
 --- !u!4 &733532962
 Transform:
   m_ObjectHideFlags: 0
@@ -2530,7 +2533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clock: {fileID: 1259568867}
-  dayLengthIRL: 60
+  dayLengthIRL: 3
   dayStartTime: 9
   dayEndTime: 17
   maxDayCounter: 7

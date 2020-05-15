@@ -7,6 +7,9 @@ public class Persistence_Manager : MonoBehaviour
     public int[] m_chatRoomSizes;
     public int m_totalMoney;
     public int m_dayNumber;
+    public int callsMissed;
+    public int callsCompleted;
+    public float gamesSatisfaction;
 
     private void Awake()
     {
@@ -24,5 +27,12 @@ public class Persistence_Manager : MonoBehaviour
     public int GetRoomIdx(Room_Name _roomName)
     {
         return (_roomName - Room_Name.Chat_1);
+    }
+
+
+    //This will calculate the satisfaction of the game
+    public float GetGameSatisfaction()
+    {
+        return gamesSatisfaction / callsCompleted;
     }
 }

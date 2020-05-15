@@ -24,6 +24,7 @@ public class Call_Manager : MonoBehaviour
     private int callsCompletedTotal; // In case we want career how many calls they have completed
     private int callsCompletedDaily; //How many calls completed in the day
 
+    private Persistence_Manager persistManager;
     //--- Audio Variables ---//
     private Audio_Manager audioManager;
     //--- Unity Methods ---//
@@ -36,6 +37,7 @@ public class Call_Manager : MonoBehaviour
         m_timeSinceLastCall = m_timeBetweenCalls;
         totalCash = GameObject.Find("Txt_Money").GetComponent<TextMeshProUGUI>();
         audioManager = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
+        persistManager = GameObject.Find("PersistenceManager").GetComponent<Persistence_Manager>();
     }
 
     private void Update()
@@ -101,18 +103,25 @@ public class Call_Manager : MonoBehaviour
         // Handle the call termination differently, depending on if ended well or not
         if (_callFinalState == Call_State.Waited_Too_Long)
         {
-            // TODO: Play negative feedback
-            audioManager.PlayOneShot(4, 0.1f);
+            // Play negative feedback
+            audioManager.PlayOneShot(4, 0.2f);
+
+            //TODO: Increment missed calls counter
+            persistManager.callsMissed += 1;
 
         }
         else if (_callFinalState == Call_State.Completed)
         {
-            // TODO: Play positive feedback
+            // Play positive feedback
             audioManager.PlayOneShot(3, 0.5f) ;
             // Add points, reputation, etc
             callsCompletedDaily++;
             GameObject.FindObjectOfType<CashCalculation_Script>().CalculateCashForCall(_callObj);
 
+            //End of game Satisfaction 
+            //TODO: Increment total calls completed
+            persistManager.callsCompleted += 1;
+            persistManager.gamesSatisfaction += _callObj.GetSatisfationFromCall();
 
             //callCash.GetComponent<TextMeshProUGUI>().text = GameObject.FindObjectOfType<CashCalculation_Script>().CalculateCashForCall(_callObj).ToString();
             totalCash.GetComponent<TextMeshProUGUI>().text = GameObject.FindObjectOfType<CashCalculation_Script>().TotalCashEarned().ToString(); //Returns Total Cash
