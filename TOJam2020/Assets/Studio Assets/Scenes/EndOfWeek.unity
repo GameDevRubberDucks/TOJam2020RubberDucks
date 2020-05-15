@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endScreenText: {fileID: 655318327}
-  textAnimationSpeed: 0.1
+  textAnimationSpeed: 0.05
 --- !u!1 &655318325
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,10 +366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Weekly Summary\n---------------------------\nRevenue: $ 00000\n\nMissed
-    Reqest: 00\n\nCostumer Satisfaction: 00%\n\n---------------------------\nOperator
-    Evaluation: \nBAD\n\nPlease pack your desk.\nYou are \nFIRED.\n\nPress Space
-    to Return to Main Menu\n"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d71e2730eb0cf4798f5eaf75f55d3c, type: 2}
   m_sharedMaterial: {fileID: -8313263770298392815, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
@@ -439,13 +436,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 655318327}
-    characterCount: 238
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 37
-    wordCount: 29
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 17
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
