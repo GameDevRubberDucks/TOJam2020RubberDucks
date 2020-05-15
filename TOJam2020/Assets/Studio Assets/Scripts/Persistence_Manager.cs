@@ -33,6 +33,6 @@ public class Persistence_Manager : MonoBehaviour
     //This will calculate the satisfaction of the game
     public float GetGameSatisfaction()
     {
-        return gamesSatisfaction / callsCompleted;
+        return (gamesSatisfaction / callsCompleted)*100.0f;
     }
 }

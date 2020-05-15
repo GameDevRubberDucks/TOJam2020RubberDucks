@@ -386,7 +386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 0}
+  m_AnchoredPosition: {x: -250, y: 65}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236534121
@@ -1548,7 +1548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1045423944
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: 0}
+  m_AnchoredPosition: {x: 250, y: 65}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1712207283
@@ -1995,7 +1995,7 @@ MonoBehaviour:
 
     https://freesound.org/people/Breviceps/sounds/450616/
 
-    
+
 
     Komiku
     4 Skate - Music
@@ -2008,14 +2008,14 @@ MonoBehaviour:
 
     http://www.orangefreesounds.com/pick-up-and-down-phone-sound-effect/
 
-    
+
 
     Alarm
     Bell - End of day
 
     http://www.orangefreesounds.com/wake-alarm-sound/
 
-    
+
 
     Mechanical
     keyboard press - Pressing a key
@@ -2092,12 +2092,12 @@ MonoBehaviour:
   m_margin: {x: 1.1224976, y: 0, z: 1.1225586, w: 0}
   m_textInfo:
     textComponent: {fileID: 1712207283}
-    characterCount: 447
+    characterCount: 438
     spriteCount: 0
-    spaceCount: 46
+    spaceCount: 49
     wordCount: 64
     linkCount: 0
-    lineCount: 18
+    lineCount: 21
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2527,8 +2527,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000024796, y: -248}
-  m_SizeDelta: {x: 234.41284, y: 115.15796}
+  m_AnchoredPosition: {x: 0, y: -259}
+  m_SizeDelta: {x: 234.41284, y: 99.1069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1967029072
 MonoBehaviour:
