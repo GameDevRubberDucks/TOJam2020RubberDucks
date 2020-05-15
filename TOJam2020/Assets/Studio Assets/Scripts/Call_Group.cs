@@ -154,6 +154,11 @@ public class Call_Group
         return m_callTimeRemaining;
     }
 
+    public float GetSatisfationFromCall()
+    {
+        return m_waitTimeRemaining / m_waitTimeMax;
+    }
+
 
 
 

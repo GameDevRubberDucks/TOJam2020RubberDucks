@@ -44,11 +44,15 @@ public class Day_Manager : MonoBehaviour
     private Persistence_Manager persistence;
 
 
+    //Audio Variables
+    private Audio_Manager audioManager;
+
     // Start is called before the first frame update
     private void Awake()
     {
         persistence = GameObject.FindObjectOfType<Persistence_Manager>();
         dayCounter = persistence.m_dayNumber;
+        audioManager = GameObject.Find("AudioManager").GetComponent<Audio_Manager>();
     }
     
     void Start()
@@ -118,6 +122,9 @@ public class Day_Manager : MonoBehaviour
                 else
                 {
                     shouldCountTime = false;
+
+                    //Play dayEnd Audio
+                    audioManager.PlayOneShot(5,0.5f);
 
                     // save the data out to the persistence manager
                     persistence.m_dayNumber = dayCounter;
