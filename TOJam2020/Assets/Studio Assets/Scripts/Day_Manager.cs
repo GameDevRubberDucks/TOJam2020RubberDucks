@@ -116,6 +116,9 @@ public class Day_Manager : MonoBehaviour
                 if (dayCounter >= maxDayCounter)
                 {
                     //End week and game
+                    // save the data out to the persistence manager
+                    persistence.m_dayNumber = dayCounter;
+                    persistence.m_totalMoney = Mathf.RoundToInt(GetComponent<CashCalculation_Script>().TotalCashEarned());
 
                     // Show the day over text
                     txtDayOver.SetActive(true);
