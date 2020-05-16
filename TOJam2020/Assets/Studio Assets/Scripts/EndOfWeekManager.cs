@@ -54,8 +54,8 @@ public class EndOfWeekManager : MonoBehaviour
 
 
         //compose final text
-        Finaltext = "WEEKLY SMMARY \n ------------------------------ \n Revenue: $" + totalMoney +
-          " \n\n Missed Call Request:" + callMissed + " \n\n Customer Satisfaction: " + customerSat + "% \n\n ------------------------------ \n Operator Evaluation: \n" +
+        Finaltext = "WEEKLY SUMMARY \n ------------------------------ \n Revenue: $" + totalMoney +
+          " \n\n Missed Call Requests: " + callMissed + " \n\n Customer Satisfaction: " + customerSat + "% \n\n ------------------------------ \n Operator Evaluation: \n" +
           operatorEVA + "\n\n" + operatorFinalStat +
           "\n\n Press Space to Return to Main Menu."
           ;
