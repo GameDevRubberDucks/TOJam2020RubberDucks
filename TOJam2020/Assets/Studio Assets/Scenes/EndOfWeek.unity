@@ -182,7 +182,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 41066638}
   m_TextComponent: {fileID: 655318327}
   m_materialReferenceIndex: 1
@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 252487401}
   - component: {fileID: 252487400}
   - component: {fileID: 252487404}
+  - component: {fileID: 252487405}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -265,12 +266,12 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -309,6 +310,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScreenText: {fileID: 655318327}
   textAnimationSpeed: 0.05
+--- !u!114 &252487405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252487399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dceff256a4b0cec46969d0aac4ade860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_chatRoomSizes: 
+  m_totalMoney: 0
+  m_dayNumber: 0
+  callsMissed: 0
+  callsCompleted: 0
+  gamesSatisfaction: 0
 --- !u!1 &655318325
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +560,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294173406}
   m_CullTransparentMesh: 0
+--- !u!1 &1424656292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1424656294}
+  - component: {fileID: 1424656293}
+  m_Layer: 0
+  m_Name: PersistenceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1424656293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424656292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dceff256a4b0cec46969d0aac4ade860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_chatRoomSizes: 
+  m_totalMoney: 1231231
+  m_dayNumber: 12
+  callsMissed: 12
+  callsCompleted: 23
+  gamesSatisfaction: 23
+--- !u!4 &1424656294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424656292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1494478786
 GameObject:
   m_ObjectHideFlags: 0

@@ -39,17 +39,17 @@ public class EndOfWeekManager : MonoBehaviour
         if (callMissed <= 5 && customerSat >= 70.0f)
         {
             operatorEVA = "Fair";
-            operatorFinalStat = "Come Back Tommorrow \n You are not fired";
+            operatorFinalStat = "Come Back Tommorrow \n You are \nNOT FIRED";
         }
         else if (callMissed <= 10 && customerSat >= 50.0f)
         {
             operatorEVA = "Average";
-            operatorFinalStat = "Come Back Tommorrow \n You are almost \n fired";
+            operatorFinalStat = "Come Back Tommorrow \n You are \nALMOST FIRED";
         }
         else
         {
             operatorEVA = "BAD";
-            operatorFinalStat = "Please Pack Your Desk\n You are \n FIRED";
+            operatorFinalStat = "Please Pack Your Desk\n You are \nFIRED";
         }
 
 

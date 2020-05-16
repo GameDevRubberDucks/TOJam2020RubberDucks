@@ -2780,6 +2780,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106473540}
   m_CullTransparentMesh: 0
+--- !u!1 &1176767223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176767224}
+  - component: {fileID: 1176767226}
+  - component: {fileID: 1176767225}
+  m_Layer: 5
+  m_Name: TMP SubMeshUI [8-bit-pusab SDF Material + LiberationSans SDF Atlas]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1176767224
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176767223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6610867000178329271}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1176767225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176767223}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_material: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
+  m_isDefaultMaterial: 0
+  m_padding: 0
+  m_canvasRenderer: {fileID: 1176767226}
+  m_TextComponent: {fileID: 6610867000178329272}
+  m_materialReferenceIndex: 1
+--- !u!222 &1176767226
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176767223}
+  m_CullTransparentMesh: 0
 --- !u!114 &1259568867 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6388225061497196759, guid: 1adc08e74bce68c4dab561ef35a62a56,
@@ -2969,6 +3042,79 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1 &1687041473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687041474}
+  - component: {fileID: 1687041476}
+  - component: {fileID: 1687041475}
+  m_Layer: 5
+  m_Name: TMP SubMeshUI [8-bit-pusab SDF Material + LiberationSans SDF Atlas]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1687041474
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687041473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6610867000178329273}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1687041475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687041473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_material: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
+  m_isDefaultMaterial: 0
+  m_padding: 1.25
+  m_canvasRenderer: {fileID: 1687041476}
+  m_TextComponent: {fileID: 6610867000178329274}
+  m_materialReferenceIndex: 1
+--- !u!222 &1687041476
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687041473}
+  m_CullTransparentMesh: 0
 --- !u!1 &2000019865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,6 +3278,1115 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3287728505201164474, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505206558743, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505302427150, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505366911700, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505382323318, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505391032745, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505419576721, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505536574560, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505679879458, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505680563330, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505747381142, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505748260588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505759448263, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505894417986, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505925070646, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505930619999, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728505953634029, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506012504161, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506196869451, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506269358081, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506390768754, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506390918864, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506509176860, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506608145435, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506746456745, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506760077410, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506896121320, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506953282130, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506965918178, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728506974868440, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728507011026524, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728507026580249, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728507092310441, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728507180819826, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728507182303211, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728507183898349, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728507199684233, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728507232701255, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 3287728507234603802, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610866999165674433, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999208802911, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'We<color=green> pressed <i>W</i></color> and now we have both callers
+        assigned to server slots.
+
+
+        Since<color=green> each slot can only
+        hold one caller</color>, pressing <i>Q</i> would not work.
+
+
+        Now
+        that the call has been fully assigned, notice the red highlight has gone
+        away.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999208802911, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610866999208802911, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933424, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610866999271933424, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933424, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 4.0436754
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933424, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933424, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -2.1057327
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933424, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.32606968
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933424, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.y
+      value: -3.3914764
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933424, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933424, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'Finally, let''s look at the last special key, the <color=green>Swap</color>
+        key.
+
+
+        This key is bound to your keyboard''s <color=green>Left Control</color>.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933427, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -116.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933427, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -543.9851
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933427, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999271933427, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -377.45905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999317611208, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999338085178, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'The call finished. Since <color=green>it was a success</color>, we
+        earned some <color=green>money</color>.
+
+
+        Also, the callers disconnected
+        from the room and from the server slots.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999338085178, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610866999338085178, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'Welcome!
+
+
+        <color=green>This is the tutorial.</color>
+
+
+        Use
+        the <color=green>ARROW KEYS</color> to navigate through it.
+
+
+        if
+        you want to skip it, press <color=green>ENTER</color> at any time. We recommend
+        going through the whole thing at least once!
+
+
+        Thanks for playing!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 204
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_subTextObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1176767225}
+    - target: {fileID: 6610866999435134250, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999476265520, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999476265534, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610866999476265534, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999476265534, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999476265534, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999476265534, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999476265534, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'This bar at the top shows the <color=green>progress in the current
+        day</color>.
+
+
+        At the end of the day, all active calls will be terminated
+        so make sure to finish them up!
+
+
+        <color=green>After each day</color>,
+        you will be given the chance to <color=green>upgrade your rooms!</color>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999493139219, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999575648999, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999624805368, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'We first need to <color=green>bind</color> the new callers to server
+        slots.
+
+
+        To start this process, we need to <color=green>click on
+        the call</color>.
+
+
+        After clicking it, a <color=green>red outline
+        appears to show that it is in binding mode</color>.
+
+
+        Also, since
+        the callers have been waiting, their patience meter has started to drain.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999657185500, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999664068359, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999695644415, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999695644415, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999695644415, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999695644415, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999695644415, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999695644415, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'Now that the call is in binding mode, we can<color=green> assign the
+        callers to our preferred server slots</color>.
+
+
+        We can do this by
+        <color=green>pressing any letter keys on the keyboard</color>.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999695644415, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 155
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999695644415, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999695644415, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999714676682, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999718656625, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999723849418, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'This is the <color=green>Call Log</color>.
+
+
+        Calls will show
+        up here one at a time.
+
+
+        Your job is to ensure the people in each
+        call are grouped together in the same <color=green>Chat Room</color>.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999723849418, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 25.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999723849418, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999777357170, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999881715927, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'To <color=green>move callers into a room</color>, we first need to
+        select them.
+
+
+        We can select them by <color=green>pressing the key
+        for their server slots</color>. In this case,  <i>Q</i> and <i>W</i>. We
+        can also press the keys again to deselect them.
+
+
+        The slots are now
+        highlighted to show our selection.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999881715927, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610866999881715927, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999885312645, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'Great! We assigned the first caller to the first server slot by pressing
+        <color=green>Q</color>.
+
+
+        Notice the slot on the keyboard is now
+        filled.
+
+
+        We still have to <color=green>bind the other caller</color>.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999885312645, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610866999885312645, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610866999995152942, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000034855341, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000035634781, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000086450136, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000123862912, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000123862926, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'These are the <color=green>Chat Rooms</color>.
+
+
+        You will need
+        to place groups of callers into these rooms together in order to activate
+        them</color>.
+
+
+        The <color=green>number of panels</color> on the
+        screen show how many people can be placed together into the room. Rooms with
+        a <color=green>red indicator and a black screen are currently disabled</color>.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000123862926, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000123862926, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 23.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000123862926, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000123862926, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000123862926, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000141487002, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000143625857, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000143625857, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000143625857, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: Let's also take a look at the<color=green> three special keys </color>on
+        the keyboard.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000143625857, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000143625857, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000143625857, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000181195431, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: "These are the <color=green>Server Slots</color>. \n\nEach one can only<color=green>
+        hold a single caller at a time</color>.\n\nThey are bound to the keys on
+        your keyboard."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000181195431, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000181195431, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000181195449, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000184169966, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000184169966, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000184169966, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000184169966, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000184169966, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000184169966, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000184169966, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000184169966, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: "Uh oh! \n\nThe callers are starting to get <color=green>impatient</color>.\n\nWe
+        better get them into the room before they get sick of waiting!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000340429870, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000340429870, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000340429870, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000340429870, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: "The <color=green>current day and your total money</color> are displayed
+        here. \n\nNotice that the money is higher now that we completed a call."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000350693851, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'That''s it!
+
+
+        Feel free to go back through and double check
+        something if you want to.
+
+
+        When you''re ready to play, simply <color=green>press
+        ENTER </color>at any time.
+
+
+        Thanks for playing!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000350693851, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000350693851, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000350693851, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 164
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000350693851, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000350693851, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000350693851, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_subTextObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1687041475}
+    - target: {fileID: 6610867000350693851, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331164, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331164, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331164, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331164, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'The second special key is the <color=green>Disconnect</color> key.
+
+
+        This
+        is bound to your keyboard''s <color=green>spacebar</color>.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 317.61935
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 184.94467
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 3.652555
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000363331165, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 101.271736
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000372886353, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000372886353, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000372886353, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000372886353, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000372886353, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000372886353, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'Now that we have them selected, we can <color=green>move them to a
+        chat room</color>. The room needs to be active and have enough open slots.
+
+
+        We
+        can do this by pressing the key for that room. <color=green>Each room has
+        a number below it</color>. Press that number key on the keyboard to pick
+        that room.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000376908393, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000425395243, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000440665688, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000477743405, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000477743405, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000477743405, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000477743405, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000477743405, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000477743405, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'The call is in progress.
+
+
+        <color=green>The bottom left timer
+        is starting to fill up now to show how far along they are</color>.
+
+
+        Also,
+        the patience meter has stopped draining.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000493158588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000493158588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000493158588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000493158588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000493158588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000493158588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 1176.1812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000493158588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 90.93902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000493158588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -671.2209
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000493158588, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: "The first special key is the <color=green>Deselect</color> key. \n\nThis
+        key is bound to <color=green>Left Shift</color> on the keyboard."
+      objectReference: {fileID: 0}
     - target: {fileID: 6610867000530457329, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
         type: 3}
       propertyPath: m_Name
@@ -3242,5 +4497,259 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6610867000610855329, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000635455788, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121672, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121672, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121672, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121672, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121673, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867000860121673, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 15.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121673, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 364.3915
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121673, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121673, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 394.4897
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121673, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 154.12967
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121673, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121673, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 45.05652
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000860121673, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000868923429, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867000892713935, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'Oh look! A new Call!
+
+
+        The top left shows the <color=green>number
+        of people</color>. In this case, there are <color=green>2</color>.
+
+
+        The
+        <color=green>bottom left shows how long this call will last</color> once
+        it is underway. In this case, <color=green>20 seconds</color>.
+
+
+        The
+        <color=green>bottom right bar shows how long the callers are willing to wait</color>.
+        If their patience runs out, they will disconnect!
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001032880858, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001035505033, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867001035505033, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001035505033, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: 'We pressed the <color=green>1 key</color> and now the callers are <color=green>together
+        in chat room 1</color>.
+
+
+        They are also automatically deselected.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001035505033, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001035505033, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001035505033, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001035505035, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001074823095, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001086975322, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001137936499, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001170991211, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001183367783, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+        type: 2}
+    - target: {fileID: 6610867001183367783, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001183367783, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001183367783, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610867001183367783, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176747405423238145, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_text
+      value: ENTER to Skip
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176747405423238145, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176747405423238145, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176747405423238145, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176747405423238145, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4806b6b246cef7941a8d7b6e9dfe6e45, type: 3}
+--- !u!224 &6610867000178329271 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6610866999431739855, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+    type: 3}
+  m_PrefabInstance: {fileID: 6610867000178329270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6610867000178329272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6610866999431739852, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+    type: 3}
+  m_PrefabInstance: {fileID: 6610867000178329270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &6610867000178329273 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6610867000350693850, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+    type: 3}
+  m_PrefabInstance: {fileID: 6610867000178329270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6610867000178329274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6610867000350693851, guid: 4806b6b246cef7941a8d7b6e9dfe6e45,
+    type: 3}
+  m_PrefabInstance: {fileID: 6610867000178329270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
