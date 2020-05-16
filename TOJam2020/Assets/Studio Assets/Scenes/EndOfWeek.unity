@@ -207,7 +207,6 @@ GameObject:
   - component: {fileID: 252487401}
   - component: {fileID: 252487400}
   - component: {fileID: 252487404}
-  - component: {fileID: 252487405}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -310,24 +309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScreenText: {fileID: 655318327}
   textAnimationSpeed: 0.05
---- !u!114 &252487405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 252487399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dceff256a4b0cec46969d0aac4ade860, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_chatRoomSizes: 
-  m_totalMoney: 0
-  m_dayNumber: 0
-  callsMissed: 0
-  callsCompleted: 0
-  gamesSatisfaction: 0
 --- !u!1 &655318325
 GameObject:
   m_ObjectHideFlags: 0
