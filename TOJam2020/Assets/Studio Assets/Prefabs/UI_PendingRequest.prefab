@@ -141,7 +141,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d71e2730eb0cf4798f5eaf75f55d3c, type: 2}
-  m_sharedMaterial: {fileID: -8313263770298392815, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+  m_sharedMaterial: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -680,9 +680,9 @@ MonoBehaviour:
   patience_MediumIcon: {fileID: 21300000, guid: 2d06ae2901549cd41bab0791f7f9899a,
     type: 3}
   patience_AngerIcon: {fileID: 21300000, guid: 04408df6ff3e36944be39b13c926f425, type: 3}
-  patience_HappyColour: {r: 0.10588236, g: 1, b: 0, a: 1}
-  patience_MediumColour: {r: 1, g: 0.8291087, b: 0, a: 1}
-  patience_AngerColour: {r: 1, g: 0.0670706, b: 0, a: 1}
+  patience_HappyColour: {r: 0.4431373, g: 0.6666667, b: 0.20392159, a: 1}
+  patience_MediumColour: {r: 0.9568628, g: 0.7058824, b: 0.10588236, a: 1}
+  patience_AngerColour: {r: 0.90196085, g: 0.28235295, b: 0.18039216, a: 1}
 --- !u!114 &3119095230269051949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.107794166, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.4431373, g: 0.6666667, b: 0.20392159, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d71e2730eb0cf4798f5eaf75f55d3c, type: 2}
-  m_sharedMaterial: {fileID: -8313263770298392815, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+  m_sharedMaterial: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d71e2730eb0cf4798f5eaf75f55d3c, type: 2}
-  m_sharedMaterial: {fileID: -8313263770298392815, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+  m_sharedMaterial: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1721,7 +1721,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d71e2730eb0cf4798f5eaf75f55d3c, type: 2}
-  m_sharedMaterial: {fileID: -8313263770298392815, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+  m_sharedMaterial: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1878,7 +1878,7 @@ MonoBehaviour:
   m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d71e2730eb0cf4798f5eaf75f55d3c, type: 2}
-  m_sharedMaterial: {fileID: -8313263770298392815, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+  m_sharedMaterial: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2100,7 +2100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.13428688, a: 1}
+  m_Color: {r: 0.4431373, g: 0.6666667, b: 0.20392159, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2183,7 +2183,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d71e2730eb0cf4798f5eaf75f55d3c, type: 2}
-  m_sharedMaterial: {fileID: -8313263770298392815, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+  m_sharedMaterial: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2567,7 +2567,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32d71e2730eb0cf4798f5eaf75f55d3c, type: 2}
-  m_sharedMaterial: {fileID: -8313263770298392815, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
+  m_sharedMaterial: {fileID: -2296442798507829900, guid: 32d71e2730eb0cf4798f5eaf75f55d3c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

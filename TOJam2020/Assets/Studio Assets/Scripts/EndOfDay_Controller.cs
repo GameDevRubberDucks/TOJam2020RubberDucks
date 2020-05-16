@@ -85,13 +85,28 @@ public class EndOfDay_Controller : MonoBehaviour
                     // Now, no upgrade is selected
                     m_selectedRoom = -1;
                 }
-                else if (m_selectedRoom == -1) // Should only be able to upgrade if the token has not already been used
+                else if (m_selectedRoom == -1) // If nothing is currently upgraded
                 {
                     // If the room cannot be upgraded, keep going
                     if (m_roomObjs[i].MaxCapacity == 5)
                         continue;
 
                     // Upgrade the room to its new state
+                    UpgradeRoom(i);
+
+                    // This is the newly selected room
+                    m_selectedRoom = i;
+                }
+                else // Another room is currently set to be upgraded, but they are swapping to another room
+                {
+                    // If the room cannot be upgraded, keep going
+                    if (m_roomObjs[i].MaxCapacity == 5)
+                        continue;
+
+                    // Downgrade the previous room
+                    DowngradeRoom(m_selectedRoom);
+
+                    // Upgrade the new room
                     UpgradeRoom(i);
 
                     // This is the newly selected room
