@@ -5,21 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Studio Assets/Scenes/EndOfWeek.unity
-    guid: 0c849e24501f5a840a6e7ecbe53f05ba
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Studio Assets/Scenes/Main Menu.unity
     guid: 6e0ebedf75f98b64886850794993794b
@@ -27,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Studio Assets/Scenes/Tutorial.unity
     guid: 113b0a682381f30449995cd2e341bbc6
   - enabled: 1
+    path: Assets/Studio Assets/Scenes/Main.unity
+    guid: f1161b658cedeef4e98ec548fe6d6602
+  - enabled: 1
     path: Assets/Studio Assets/Scenes/EndOfDay.unity
     guid: 22d2fb15091af0e4c9283d3a240e2d66
   - enabled: 1
-    path: Assets/Studio Assets/Scenes/Main.unity
-    guid: f1161b658cedeef4e98ec548fe6d6602
+    path: Assets/Studio Assets/Scenes/EndOfWeek.unity
+    guid: 0c849e24501f5a840a6e7ecbe53f05ba
   m_configObjects: {}
